@@ -19,6 +19,12 @@ import com.tiempometa.printer.result.ResultRow;
  *
  */
 public class LabelReport implements Report {
+	public LabelReport(String labelTemplate, List<LabelRow> rows) {
+		super();
+		this.labelTemplate = labelTemplate;
+		this.rows = rows;
+	}
+
 	private String labelTemplate;
 	
 	private List<LabelRow> rows = new ArrayList<LabelRow>();

@@ -306,5 +306,24 @@ public class ResultRow {
 	public void setSplits(List<ResultSplit> splits) {
 		this.splits = splits;
 	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "ResultRow [bib=" + bib + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", middleName=" + middleName
+				+ ", fullName=" + fullName + ", category=" + category
+				+ ", chipTime=" + chipTime + ", chipDiff=" + chipDiff
+				+ ", officialTime=" + officialTime + ", officialDiff="
+				+ officialDiff + ", chipGeneralPosition=" + chipGeneralPosition
+				+ ", chipGenderPosition=" + chipGenderPosition
+				+ ", chipCategoryPosition=" + chipCategoryPosition
+				+ ", officialGeneralPosition=" + officialGeneralPosition
+				+ ", officialGenderPosition=" + officialGenderPosition
+				+ ", officialCategoryPosition=" + officialCategoryPosition
+				+ ", finishDate=" + finishDate + ", team=" + team
+				+ ", procedence=" + procedence + ", splits=" + splits + "]";
+	}
 
 }
