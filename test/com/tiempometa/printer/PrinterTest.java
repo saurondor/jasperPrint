@@ -132,13 +132,13 @@ public class PrinterTest {
 	public void testLabelToPrinterReportPrintServiceBoolean() {
 		logger.info("Print label test");
 		List<LabelRow> rows = new ArrayList<LabelRow>();
-		LabelRow row = new LabelRow("2344", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic", "gtasistro@gmail.com", 39, "M", new Date(), "Libre Varonil", "LV", "I923423422", "003434-323432-234234-234324-223422", "P232334345", "$234.00" , "Medio Maraton Atlas Colomos", "10K", "", "Rojo", null, "", null, null, new Date(), "Tiempo Meta", "Texcoco");
+		LabelRow row = new LabelRow("2344", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic", "gtasistro@gmail.com", 39, "M", new Date(), "Libre Varonil", "LV", "I923423422", "003434-323432-234234-234324-223422", "P232334345", "$234.00" , "Medio Maraton Atlas Colomos", "10K", "", "Rojo", null, "", null, null, new Date(), "Tiempo Meta", "Texcoco", null);
 		rows.add(row);
-		row = new LabelRow("2345", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic", "gtasistro@gmail.com", 39, "M", new Date(), "Libre Varonil", "LV", "I923423422", "003434-323432-234234-234324-223422", "P232334345", "$234.00" , "Medio Maraton Atlas Colomos", "10K", "", "Rojo", null, "", null, null, new Date(), "Tiempo Meta", "Texcoco");		
+		row = new LabelRow("2345", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic", "gtasistro@gmail.com", 39, "M", new Date(), "Libre Varonil", "LV", "I923423422", "003434-323432-234234-234324-223422", "P232334345", "$234.00" , "Medio Maraton Atlas Colomos", "10K", "", "Rojo", null, "", null, null, new Date(), "Tiempo Meta", "Texcoco", null);		
 		rows.add(row);
-		row = new LabelRow("2346", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic", "gtasistro@gmail.com", 39, "M", new Date(), "Libre Varonil", "LV", "I923423422", "003434-323432-234234-234324-223422", "P232334345", "$234.00" , "Medio Maraton Atlas Colomos", "10K", "", "Rojo", null, "", null, null, new Date(), "Tiempo Meta", "Texcoco");
+		row = new LabelRow("2346", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic", "gtasistro@gmail.com", 39, "M", new Date(), "Libre Varonil", "LV", "I923423422", "003434-323432-234234-234324-223422", "P232334345", "$234.00" , "Medio Maraton Atlas Colomos", "10K", "", "Rojo", null, "", null, null, new Date(), "Tiempo Meta", "Texcoco", null);
 		rows.add(row);
-		row = new LabelRow("2347", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic", "gtasistro@gmail.com", 39, "M", new Date(), "Libre Varonil", "LV", "I923423422", "003434-323432-234234-234324-223422", "P232334345", "$234.00" , "Medio Maraton Atlas Colomos", "10K", "", "Rojo", null, "", null, null, new Date(), "Tiempo Meta", "Texcoco");
+		row = new LabelRow("2347", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic", "gtasistro@gmail.com", 39, "M", new Date(), "Libre Varonil", "LV", "I923423422", "003434-323432-234234-234324-223422", "P232334345", "$234.00" , "Medio Maraton Atlas Colomos", "10K", "", "Rojo", null, "", null, null, new Date(), "Tiempo Meta", "Texcoco", null);
 		rows.add(row);
 		PrintService printer = null;
 		PrintService[] services = Printer.getPrintServices();
