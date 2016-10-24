@@ -40,11 +40,57 @@ public class LabelRow {
 	private Date registrationDate;
 	private String team;
 	private String procedence;
+	private String companyName;
+	private String jobPosition;
 
 	public LabelRow() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	
+	
+	public LabelRow(String bib, String firstName, String lastName, String middleName, String fullName, String email,
+			Integer age, String gender, Date birthDate, String category, String categoryKey,
+			String registrationConfirmation, String registrationOperation, String paymentConfirmation,
+			String paymentAmount, String eventName, String subeventName, String address, String extra1, String extra2,
+			String extra3, String extra4, String extra5, Date registrationDate, String team, String procedence,
+			Image barcode, Image qrCode, Image photo, String companyName, String jobPosition) {
+		super();
+		this.barcode = barcode;
+		this.qrCode = qrCode;
+		this.photo = photo;
+		this.bib = bib;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.middleName = middleName;
+		this.fullName = fullName;
+		this.email = email;
+		this.age = age;
+		this.gender = gender;
+		this.birthDate = birthDate;
+		this.category = category;
+		this.categoryKey = categoryKey;
+		this.registrationConfirmation = registrationConfirmation;
+		this.registrationOperation = registrationOperation;
+		this.paymentConfirmation = paymentConfirmation;
+		this.paymentAmount = paymentAmount;
+		this.eventName = eventName;
+		this.subeventName = subeventName;
+		this.address = address;
+		this.extra1 = extra1;
+		this.extra2 = extra2;
+		this.extra3 = extra3;
+		this.extra4 = extra4;
+		this.extra5 = extra5;
+		this.registrationDate = registrationDate;
+		this.team = team;
+		this.procedence = procedence;
+		this.companyName = companyName;
+		this.jobPosition = jobPosition;
+	}
+
+
 
 	public LabelRow(String bib, String firstName, String lastName, String middleName, String fullName, String email,
 			Integer age, String gender, Date birthDate, String category, String categoryKey,
@@ -553,6 +599,34 @@ public class LabelRow {
 	 */
 	public void setPhoto(Image photo) {
 		this.photo = photo;
+	}
+
+	/**
+	 * @return the companyName
+	 */
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	/**
+	 * @param companyName the companyName to set
+	 */
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	/**
+	 * @return the jobPosition
+	 */
+	public String getJobPosition() {
+		return jobPosition;
+	}
+
+	/**
+	 * @param jobPosition the jobPosition to set
+	 */
+	public void setJobPosition(String jobPosition) {
+		this.jobPosition = jobPosition;
 	}
 
 }
