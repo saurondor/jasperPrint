@@ -32,6 +32,7 @@ public class ResultRow {
 	private String team;
 	private String procedence;
 	private List<ResultSplit> splits = new ArrayList<ResultSplit>();
+
 	public ResultRow() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -31,7 +31,7 @@ public class ResultReport implements Report {
 	private String imageBottomLeft;
 	private String imageBottomRight;
 	private String categoryName;
-	
+
 	private List<ResultRow> rows = new ArrayList<ResultRow>();
 
 	public ResultReport() {
@@ -39,11 +39,10 @@ public class ResultReport implements Report {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ResultReport(String reportTemplate, String eventTitle,
-			String reportTitle, String eventSubtitle, String eventLocation,
-			String eventDate, String printDate, String eventWebPage,
-			String imageTopLeft, String imageTopRight, String imageBottomLeft,
-			String imageBottomRight, String categoryName, List<ResultRow> rows) {
+	public ResultReport(String reportTemplate, String eventTitle, String reportTitle, String eventSubtitle,
+			String eventLocation, String eventDate, String printDate, String eventWebPage, String imageTopLeft,
+			String imageTopRight, String imageBottomLeft, String imageBottomRight, String categoryName,
+			List<ResultRow> rows) {
 		super();
 		this.reportTemplate = reportTemplate;
 		this.eventTitle = eventTitle;
@@ -252,8 +251,7 @@ public class ResultReport implements Report {
 	@Override
 	public Map<String, Object> getParamMap() {
 
-		Map<String, Object> paramMap=new HashMap<String, Object>();
-		
+		Map<String, Object> paramMap = new HashMap<String, Object>();
 		paramMap.put("EVENT_TITLE", this.getEventTitle());
 		paramMap.put("EVENT_SUBTITLE", this.getEventSubtitle());
 		paramMap.put("EVENT_LOCATION", this.getEventLocation());
@@ -265,7 +263,7 @@ public class ResultReport implements Report {
 		paramMap.put("IMAGE_TOP_LEFT", this.getImageTopLeft());
 		paramMap.put("IMAGE_BOTTOM_RIGHT", this.getImageBottomRight());
 		paramMap.put("IMAGE_BOTTOM_LEFT", this.getImageBottomLeft());
-		paramMap.put("REPORT_PRINT_TIME", this.getPrintDate().toString());
+		paramMap.put("REPORT_PRINT_TIME", this.getPrintDate());
 
 		return paramMap;
 	}
@@ -288,7 +286,5 @@ public class ResultReport implements Report {
 	public String getTemplate() {
 		return getReportTemplate();
 	}
-	
-	
 
 }

@@ -40,49 +40,41 @@ public class Printer {
 		aset.add(MediaSizeName.NA_LETTER);
 		// aset.add(Sides.TWO_SIDED_LONG_EDGE);
 		// aset.add(Finishings.STAPLE);
-		PrintService[] pservices = PrintServiceLookup.lookupPrintServices(null,
-				null);
+		PrintService[] pservices = PrintServiceLookup.lookupPrintServices(null, null);
 		return pservices;
 	}
-	
+
 	public static void printPreview(Report report) throws JRException {
-		JasperPrint jasperPrint = JasperFillManager.fillReport(report.getTemplate(),
-				report.getParamMap(), report.getDataSource());
+		JasperPrint jasperPrint = JasperFillManager.fillReport(report.getTemplate(), report.getParamMap(),
+				report.getDataSource());
 		JasperViewer.viewReport(jasperPrint, false);
 	}
 
-	public static Image printToImage(Report report, Float zoom)
-			throws JRException {
-		JasperPrint print = JasperFillManager.fillReport(report.getTemplate(),
-				report.getParamMap(), report.getDataSource());
+	public static Image printToImage(Report report, Float zoom) throws JRException {
+		JasperPrint print = JasperFillManager.fillReport(report.getTemplate(), report.getParamMap(),
+				report.getDataSource());
 		Image image = JasperPrintManager.printPageToImage(print, 0, zoom);
 		return image;
 	}
 
-	public static void printToPrinter(Report report, boolean withDialogue)
-			throws JRException {
-		JasperPrint print = JasperFillManager.fillReport(report.getTemplate(),
-				report.getParamMap(), report.getDataSource());
+	public static void printToPrinter(Report report, boolean withDialogue) throws JRException {
+		JasperPrint print = JasperFillManager.fillReport(report.getTemplate(), report.getParamMap(),
+				report.getDataSource());
 		JasperPrintManager.printReport(print, withDialogue);
 	}
 
-	public static void printToPrinter(Report report, PrintService printService,
-			boolean withDialogue) throws JRException {
-		JasperPrint print = JasperFillManager.fillReport(report.getTemplate(),
-				report.getParamMap(), report.getDataSource());
+	public static void printToPrinter(Report report, PrintService printService, boolean withDialogue)
+			throws JRException {
+		JasperPrint print = JasperFillManager.fillReport(report.getTemplate(), report.getParamMap(),
+				report.getDataSource());
 		JRPrintServiceExporter exporter = new JRPrintServiceExporter();
 		exporter.setParameter(JRExporterParameter.JASPER_PRINT, print);
 		// exporter.setParameter(JRPrintServiceExporterParameter.PRINT_REQUEST_ATTRIBUTE_SET,
 		// printRequestAttributeSet);
-		exporter.setParameter(
-				JRPrintServiceExporterParameter.PRINT_SERVICE_ATTRIBUTE_SET,
+		exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE_ATTRIBUTE_SET,
 				printService.getAttributes());
-		exporter.setParameter(
-				JRPrintServiceExporterParameter.DISPLAY_PAGE_DIALOG,
-				Boolean.FALSE);
-		exporter.setParameter(
-				JRPrintServiceExporterParameter.DISPLAY_PRINT_DIALOG,
-				withDialogue);
+		exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PAGE_DIALOG, Boolean.FALSE);
+		exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PRINT_DIALOG, withDialogue);
 		exporter.exportReport();
 	}
 
