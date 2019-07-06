@@ -60,6 +60,11 @@ public class ResultReport implements Report {
 		this.rows = rows;
 	}
 
+	public ResultReport(String reportTemplate, List<ResultRow> rows) {
+		this.reportTemplate = reportTemplate;
+		this.rows = rows;
+	}
+
 	/**
 	 * @return the reportTemplate
 	 */

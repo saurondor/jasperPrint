@@ -5,7 +5,7 @@
 
 	<groupId>com.tiempometa.printer</groupId>
 	<artifactId>jasperprint</artifactId>
-	<version>3.0</version>
+	<version>3.1</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -99,7 +99,7 @@
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
-			<version>6.5.1</version>
+			<version>5.5.1</version>
 		</dependency>
 
 	</dependencies>
