@@ -31,6 +31,7 @@ public class ResultReport implements Report {
 	private String imageBottomLeft;
 	private String imageBottomRight;
 	private String categoryName;
+	private Integer officialResults;
 
 	private List<ResultRow> rows = new ArrayList<ResultRow>();
 
@@ -269,6 +270,7 @@ public class ResultReport implements Report {
 		paramMap.put("IMAGE_BOTTOM_RIGHT", this.getImageBottomRight());
 		paramMap.put("IMAGE_BOTTOM_LEFT", this.getImageBottomLeft());
 		paramMap.put("REPORT_PRINT_TIME", this.getPrintDate());
+		paramMap.put("OFFICIAL_RESULTS", this.getOfficialResults());
 
 		return paramMap;
 	}
@@ -290,6 +292,14 @@ public class ResultReport implements Report {
 	@Override
 	public String getTemplate() {
 		return getReportTemplate();
+	}
+
+	public Integer getOfficialResults() {
+		return officialResults;
+	}
+
+	public void setOfficialResults(Integer officialResults) {
+		this.officialResults = officialResults;
 	}
 
 }

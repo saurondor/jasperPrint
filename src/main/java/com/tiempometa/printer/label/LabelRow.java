@@ -42,14 +42,14 @@ public class LabelRow {
 	private String procedence;
 	private String companyName;
 	private String jobPosition;
+	private String startTime;
+	private String labelColor;
 
 	public LabelRow() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	
 	public LabelRow(String bib, String firstName, String lastName, String middleName, String fullName, String email,
 			Integer age, String gender, Date birthDate, String category, String categoryKey,
 			String registrationConfirmation, String registrationOperation, String paymentConfirmation,
@@ -89,8 +89,6 @@ public class LabelRow {
 		this.companyName = companyName;
 		this.jobPosition = jobPosition;
 	}
-
-
 
 	public LabelRow(String bib, String firstName, String lastName, String middleName, String fullName, String email,
 			Integer age, String gender, Date birthDate, String category, String categoryKey,
@@ -174,8 +172,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param bib
-	 *            the bib to set
+	 * @param bib the bib to set
 	 */
 	public void setBib(String bib) {
 		this.bib = bib;
@@ -189,8 +186,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param firstName
-	 *            the firstName to set
+	 * @param firstName the firstName to set
 	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -204,8 +200,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param lastName
-	 *            the lastName to set
+	 * @param lastName the lastName to set
 	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
@@ -219,8 +214,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param middleName
-	 *            the middleName to set
+	 * @param middleName the middleName to set
 	 */
 	public void setMiddleName(String middleName) {
 		this.middleName = middleName;
@@ -234,8 +228,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param fullName
-	 *            the fullName to set
+	 * @param fullName the fullName to set
 	 */
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
@@ -249,8 +242,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param email
-	 *            the email to set
+	 * @param email the email to set
 	 */
 	public void setEmail(String email) {
 		this.email = email;
@@ -264,8 +256,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param age
-	 *            the age to set
+	 * @param age the age to set
 	 */
 	public void setAge(Integer age) {
 		this.age = age;
@@ -279,8 +270,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param gender
-	 *            the gender to set
+	 * @param gender the gender to set
 	 */
 	public void setGender(String gender) {
 		this.gender = gender;
@@ -294,8 +284,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param birthDate
-	 *            the birthDate to set
+	 * @param birthDate the birthDate to set
 	 */
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
@@ -309,8 +298,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param category
-	 *            the category to set
+	 * @param category the category to set
 	 */
 	public void setCategory(String category) {
 		this.category = category;
@@ -324,8 +312,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param categoryKey
-	 *            the categoryKey to set
+	 * @param categoryKey the categoryKey to set
 	 */
 	public void setCategoryKey(String categoryKey) {
 		this.categoryKey = categoryKey;
@@ -339,8 +326,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param registrationConfirmation
-	 *            the registrationConfirmation to set
+	 * @param registrationConfirmation the registrationConfirmation to set
 	 */
 	public void setRegistrationConfirmation(String registrationConfirmation) {
 		this.registrationConfirmation = registrationConfirmation;
@@ -354,8 +340,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param registrationOperation
-	 *            the registrationOperation to set
+	 * @param registrationOperation the registrationOperation to set
 	 */
 	public void setRegistrationOperation(String registrationOperation) {
 		this.registrationOperation = registrationOperation;
@@ -369,8 +354,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param paymentConfirmation
-	 *            the paymentConfirmation to set
+	 * @param paymentConfirmation the paymentConfirmation to set
 	 */
 	public void setPaymentConfirmation(String paymentConfirmation) {
 		this.paymentConfirmation = paymentConfirmation;
@@ -384,8 +368,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param paymentAmount
-	 *            the paymentAmount to set
+	 * @param paymentAmount the paymentAmount to set
 	 */
 	public void setPaymentAmount(String paymentAmount) {
 		this.paymentAmount = paymentAmount;
@@ -399,8 +382,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param eventName
-	 *            the eventName to set
+	 * @param eventName the eventName to set
 	 */
 	public void setEventName(String eventName) {
 		this.eventName = eventName;
@@ -414,8 +396,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param subeventName
-	 *            the subeventName to set
+	 * @param subeventName the subeventName to set
 	 */
 	public void setSubeventName(String subeventName) {
 		this.subeventName = subeventName;
@@ -429,8 +410,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param address
-	 *            the address to set
+	 * @param address the address to set
 	 */
 	public void setAddress(String address) {
 		this.address = address;
@@ -444,8 +424,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param extra1
-	 *            the extra1 to set
+	 * @param extra1 the extra1 to set
 	 */
 	public void setExtra1(String extra1) {
 		this.extra1 = extra1;
@@ -459,8 +438,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param extra2
-	 *            the extra2 to set
+	 * @param extra2 the extra2 to set
 	 */
 	public void setExtra2(String extra2) {
 		this.extra2 = extra2;
@@ -474,8 +452,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param extra3
-	 *            the extra3 to set
+	 * @param extra3 the extra3 to set
 	 */
 	public void setExtra3(String extra3) {
 		this.extra3 = extra3;
@@ -489,8 +466,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param extra4
-	 *            the extra4 to set
+	 * @param extra4 the extra4 to set
 	 */
 	public void setExtra4(String extra4) {
 		this.extra4 = extra4;
@@ -504,8 +480,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param extra5
-	 *            the extra5 to set
+	 * @param extra5 the extra5 to set
 	 */
 	public void setExtra5(String extra5) {
 		this.extra5 = extra5;
@@ -519,8 +494,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param registrationDate
-	 *            the registrationDate to set
+	 * @param registrationDate the registrationDate to set
 	 */
 	public void setRegistrationDate(Date registrationDate) {
 		this.registrationDate = registrationDate;
@@ -534,8 +508,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param team
-	 *            the team to set
+	 * @param team the team to set
 	 */
 	public void setTeam(String team) {
 		this.team = team;
@@ -549,8 +522,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param procedence
-	 *            the procedence to set
+	 * @param procedence the procedence to set
 	 */
 	public void setProcedence(String procedence) {
 		this.procedence = procedence;
@@ -564,8 +536,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param barcode
-	 *            the barcode to set
+	 * @param barcode the barcode to set
 	 */
 	public void setBarcode(Image barcode) {
 		this.barcode = barcode;
@@ -579,8 +550,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param qrCode
-	 *            the qrCode to set
+	 * @param qrCode the qrCode to set
 	 */
 	public void setQrCode(Image qrCode) {
 		this.qrCode = qrCode;
@@ -594,8 +564,7 @@ public class LabelRow {
 	}
 
 	/**
-	 * @param photo
-	 *            the photo to set
+	 * @param photo the photo to set
 	 */
 	public void setPhoto(Image photo) {
 		this.photo = photo;
@@ -627,6 +596,61 @@ public class LabelRow {
 	 */
 	public void setJobPosition(String jobPosition) {
 		this.jobPosition = jobPosition;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("LabelRow [bib=");
+		builder.append(bib);
+		builder.append(", firstName=");
+		builder.append(firstName);
+		builder.append(", lastName=");
+		builder.append(lastName);
+		builder.append(", middleName=");
+		builder.append(middleName);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", category=");
+		builder.append(category);
+		builder.append(", registrationConfirmation=");
+		builder.append(registrationConfirmation);
+		builder.append(", paymentConfirmation=");
+		builder.append(paymentConfirmation);
+		builder.append(", extra1=");
+		builder.append(extra1);
+		builder.append(", extra2=");
+		builder.append(extra2);
+		builder.append(", extra3=");
+		builder.append(extra3);
+		builder.append(", extra4=");
+		builder.append(extra4);
+		builder.append(", extra5=");
+		builder.append(extra5);
+		builder.append(", team=");
+		builder.append(team);
+		builder.append(", procedence=");
+		builder.append(procedence);
+		builder.append(", start time=");
+		builder.append(startTime);
+		builder.append("]");
+		return builder.toString();
+	}
+
+	public String getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getLabelColor() {
+		return labelColor;
+	}
+
+	public void setLabelColor(String labelColor) {
+		this.labelColor = labelColor;
 	}
 
 }
