@@ -12,7 +12,6 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 import com.tiempometa.printer.Report;
-import com.tiempometa.printer.result.ResultRow;
 
 /**
  * @author Gerardo Tasistro
