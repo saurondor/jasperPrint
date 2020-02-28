@@ -4,6 +4,7 @@
 package com.tiempometa.printer;
 
 import java.awt.Image;
+import java.io.InputStream;
 
 import javax.print.PrintService;
 import javax.print.PrintServiceLookup;
@@ -27,19 +28,20 @@ import net.sf.jasperreports.view.JasperViewer;
 public class Printer {
 
 	public static PrintService[] getPrintServices() {
-		// DocFlavor psFlavor = DocFlavor.SERVICE_FORMATTED.PRINTABLE;
-//		DocFlavor psFlavor = DocFlavor.READER.TEXT_PLAIN;
 		PrintRequestAttributeSet aset = new HashPrintRequestAttributeSet();
-		// aset.add(new Copies(2));
 		aset.add(MediaSizeName.NA_LETTER);
-		// aset.add(Sides.TWO_SIDED_LONG_EDGE);
-		// aset.add(Finishings.STAPLE);
 		PrintService[] pservices = PrintServiceLookup.lookupPrintServices(null, null);
 		return pservices;
 	}
 
 	public static void printPreview(Report report) throws JRException {
 		JasperPrint jasperPrint = JasperFillManager.fillReport(report.getTemplate(), report.getParamMap(),
+				report.getDataSource());
+		JasperViewer.viewReport(jasperPrint, false);
+	}
+
+	public static void printPreview(Report report, InputStream inputStream) throws JRException {
+		JasperPrint jasperPrint = JasperFillManager.fillReport(inputStream, report.getParamMap(),
 				report.getDataSource());
 		JasperViewer.viewReport(jasperPrint, false);
 	}
@@ -51,10 +53,33 @@ public class Printer {
 		return image;
 	}
 
+	public static Image printToImage(Report report, Float zoom, InputStream inputStream) throws JRException {
+		JasperPrint print = JasperFillManager.fillReport(inputStream, report.getParamMap(), report.getDataSource());
+		Image image = JasperPrintManager.printPageToImage(print, 0, zoom);
+		return image;
+	}
+
+	public static void printToPrinter(Report report, boolean withDialogue, InputStream inputStream) throws JRException {
+		JasperPrint print = JasperFillManager.fillReport(inputStream, report.getParamMap(), report.getDataSource());
+		JasperPrintManager.printReport(print, withDialogue);
+	}
+
 	public static void printToPrinter(Report report, boolean withDialogue) throws JRException {
 		JasperPrint print = JasperFillManager.fillReport(report.getTemplate(), report.getParamMap(),
 				report.getDataSource());
 		JasperPrintManager.printReport(print, withDialogue);
+	}
+
+	public static void printToPrinter(Report report, PrintService printService, boolean withDialogue,
+			InputStream inputStream) throws JRException {
+		JasperPrint print = JasperFillManager.fillReport(inputStream, report.getParamMap(), report.getDataSource());
+		JRPrintServiceExporter exporter = new JRPrintServiceExporter();
+		exporter.setParameter(JRExporterParameter.JASPER_PRINT, print);
+		exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE_ATTRIBUTE_SET,
+				printService.getAttributes());
+		exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PAGE_DIALOG, Boolean.FALSE);
+		exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PRINT_DIALOG, withDialogue);
+		exporter.exportReport();
 	}
 
 	public static void printToPrinter(Report report, PrintService printService, boolean withDialogue)
@@ -70,13 +95,5 @@ public class Printer {
 		exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PAGE_DIALOG, Boolean.FALSE);
 		exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PRINT_DIALOG, withDialogue);
 		exporter.exportReport();
-	}
-
-	public static final void main(String[] args) {
-		PrintService services[] = Printer.getPrintServices();
-		for (int i = 0; i < services.length; i++) {
-			PrintService string = services[i];
-			System.out.println(string);
-		}
 	}
 }

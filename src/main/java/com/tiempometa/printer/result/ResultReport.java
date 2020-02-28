@@ -18,6 +18,12 @@ import com.tiempometa.printer.Report;
  *
  */
 public class ResultReport implements Report {
+
+	public static final int OFFICIAL_TIME_TEMPLATE = 0;
+	public static final int CHIP_TIME_TEMPLATE = 1;
+	public static final int OFFICIAL_RESULTS = 0;
+	public static final int PRELIMINARY_RESULTS = 1;
+
 	private String reportTemplate;
 	private String eventTitle;
 	private String reportTitle;

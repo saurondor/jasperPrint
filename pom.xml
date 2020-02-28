@@ -5,7 +5,7 @@
 
 	<groupId>com.tiempometa.printer</groupId>
 	<artifactId>jasperprint</artifactId>
-	<version>3.1</version>
+	<version>3.2</version>
 	<packaging>jar</packaging>
 
 	<properties>
