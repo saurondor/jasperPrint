@@ -5,14 +5,14 @@
 
 	<groupId>com.tiempometa.printer</groupId>
 	<artifactId>jasperprint</artifactId>
-	<version>3.3</version>
+	<version>4.0</version>
 	<packaging>jar</packaging>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-	
+
 	<name>TiempoMeta Jasper Print tools</name>
 	<url>https://www.tiempometa.com</url>
 	<build>
@@ -101,6 +101,16 @@
 			<artifactId>jasperreports</artifactId>
 			<version>5.5.1</version>
 		</dependency>
-
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>
