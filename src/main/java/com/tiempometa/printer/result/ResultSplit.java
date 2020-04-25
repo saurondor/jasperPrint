@@ -8,111 +8,219 @@ package com.tiempometa.printer.result;
  *
  */
 public class ResultSplit {
-	private String name;
-	private String time;
-	private Integer generalPosition;
-	private Integer branchPosition;
-	private Integer categoryPosition;
-	private String speed;
+	private String phaseTitle;
+	private String phaseTime;
+	private String phaseTimeDifference;
+	private String phasePace;
+	private Integer phaseGeneralPosition;
+	private Integer phaseBranchPosition;
+	private Integer phaseCategoryPosition;
+	private String lapTitle;
+	private String lapTime;
+	private String lapTimeDifference;
+	private String lapPace;
+	private Integer lapGeneralPosition;
+	private Integer lapBranchPosition;
+	private Integer lapCategoryPosition;
+	private Integer gunGeneralPosition;
+	private Integer gunBranchPosition;
+	private Integer gunCategoryPosition;
+	private Integer chipGeneralPosition;
+	private Integer chipBranchPosition;
+	private Integer chipCategoryPosition;
 
 	public ResultSplit() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ResultSplit(String name, String time, Integer generalPosition, Integer branchPosition,
-			Integer categoryPosition, String speed) {
+	public ResultSplit(String phaseTitle, String phaseTime, String phaseTimeDifference, String phasePace,
+			Integer phaseGeneralPosition, Integer phaseBranchPosition, Integer phaseCategoryPosition, String lapTitle,
+			String lapTime, String lapTimeDifference, String lapPace, Integer lapGeneralPosition,
+			Integer lapBranchPosition, Integer lapCategoryPosition, Integer gunGeneralPosition,
+			Integer gunBranchPosition, Integer gunCategoryPosition, Integer chipGeneralPosition,
+			Integer chipBranchPosition, Integer chipCategoryPosition) {
 		super();
-		this.name = name;
-		this.time = time;
-		this.generalPosition = generalPosition;
-		this.branchPosition = branchPosition;
-		this.categoryPosition = categoryPosition;
-		this.speed = speed;
+		this.phaseTitle = phaseTitle;
+		this.phaseTime = phaseTime;
+		this.phaseTimeDifference = phaseTimeDifference;
+		this.phasePace = phasePace;
+		this.phaseGeneralPosition = phaseGeneralPosition;
+		this.phaseBranchPosition = phaseBranchPosition;
+		this.phaseCategoryPosition = phaseCategoryPosition;
+		this.lapTitle = lapTitle;
+		this.lapTime = lapTime;
+		this.lapTimeDifference = lapTimeDifference;
+		this.lapPace = lapPace;
+		this.lapGeneralPosition = lapGeneralPosition;
+		this.lapBranchPosition = lapBranchPosition;
+		this.lapCategoryPosition = lapCategoryPosition;
+		this.gunGeneralPosition = gunGeneralPosition;
+		this.gunBranchPosition = gunBranchPosition;
+		this.gunCategoryPosition = gunCategoryPosition;
+		this.chipGeneralPosition = chipGeneralPosition;
+		this.chipBranchPosition = chipBranchPosition;
+		this.chipCategoryPosition = chipCategoryPosition;
 	}
 
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
+	public String getPhaseTime() {
+		return phaseTime;
 	}
 
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
+	public String getPhaseTimeDifference() {
+		return phaseTimeDifference;
 	}
 
-	/**
-	 * @return the time
-	 */
-	public String getTime() {
-		return time;
+	public String getPhasePace() {
+		return phasePace;
 	}
 
-	/**
-	 * @param time the time to set
-	 */
-	public void setTime(String time) {
-		this.time = time;
+	public Integer getPhaseGeneralPosition() {
+		return phaseGeneralPosition;
 	}
 
-	/**
-	 * @return the generalPosition
-	 */
-	public Integer getGeneralPosition() {
-		return generalPosition;
+	public Integer getPhaseBranchPosition() {
+		return phaseBranchPosition;
 	}
 
-	/**
-	 * @param generalPosition the generalPosition to set
-	 */
-	public void setGeneralPosition(Integer generalPosition) {
-		this.generalPosition = generalPosition;
+	public Integer getPhaseCategoryPosition() {
+		return phaseCategoryPosition;
 	}
 
-	/**
-	 * @return the branchPosition
-	 */
-	public Integer getBranchPosition() {
-		return branchPosition;
+	public String getLapTime() {
+		return lapTime;
 	}
 
-	/**
-	 * @param branchPosition the branchPosition to set
-	 */
-	public void setBranchPosition(Integer branchPosition) {
-		this.branchPosition = branchPosition;
+	public String getLapTimeDifference() {
+		return lapTimeDifference;
 	}
 
-	/**
-	 * @return the categoryPosition
-	 */
-	public Integer getCategoryPosition() {
-		return categoryPosition;
+	public String getLapPace() {
+		return lapPace;
 	}
 
-	/**
-	 * @param categoryPosition the categoryPosition to set
-	 */
-	public void setCategoryPosition(Integer categoryPosition) {
-		this.categoryPosition = categoryPosition;
+	public Integer getLapGeneralPosition() {
+		return lapGeneralPosition;
 	}
 
-	/**
-	 * @return the speed
-	 */
-	public String getSpeed() {
-		return speed;
+	public Integer getLapBranchPosition() {
+		return lapBranchPosition;
 	}
 
-	/**
-	 * @param speed the speed to set
-	 */
-	public void setSpeed(String speed) {
-		this.speed = speed;
+	public Integer getLapCategoryPosition() {
+		return lapCategoryPosition;
+	}
+
+	public Integer getGunGeneralPosition() {
+		return gunGeneralPosition;
+	}
+
+	public Integer getGunBranchPosition() {
+		return gunBranchPosition;
+	}
+
+	public Integer getGunCategoryPosition() {
+		return gunCategoryPosition;
+	}
+
+	public Integer getChipGeneralPosition() {
+		return chipGeneralPosition;
+	}
+
+	public Integer getChipBranchPosition() {
+		return chipBranchPosition;
+	}
+
+	public Integer getChipCategoryPosition() {
+		return chipCategoryPosition;
+	}
+
+	public void setPhaseTime(String phaseTime) {
+		this.phaseTime = phaseTime;
+	}
+
+	public void setPhaseTimeDifference(String phaseTimeDifference) {
+		this.phaseTimeDifference = phaseTimeDifference;
+	}
+
+	public void setPhasePace(String phasePace) {
+		this.phasePace = phasePace;
+	}
+
+	public void setPhaseGeneralPosition(Integer phaseGeneralPosition) {
+		this.phaseGeneralPosition = phaseGeneralPosition;
+	}
+
+	public void setPhaseBranchPosition(Integer phaseBranchPosition) {
+		this.phaseBranchPosition = phaseBranchPosition;
+	}
+
+	public void setPhaseCategoryPosition(Integer phaseCategoryPosition) {
+		this.phaseCategoryPosition = phaseCategoryPosition;
+	}
+
+	public void setLapTime(String lapTime) {
+		this.lapTime = lapTime;
+	}
+
+	public void setLapTimeDifference(String lapTimeDifference) {
+		this.lapTimeDifference = lapTimeDifference;
+	}
+
+	public void setLapPace(String lapPace) {
+		this.lapPace = lapPace;
+	}
+
+	public void setLapGeneralPosition(Integer lapGeneralPosition) {
+		this.lapGeneralPosition = lapGeneralPosition;
+	}
+
+	public void setLapBranchPosition(Integer lapBranchPosition) {
+		this.lapBranchPosition = lapBranchPosition;
+	}
+
+	public void setLapCategoryPosition(Integer lapCategoryPosition) {
+		this.lapCategoryPosition = lapCategoryPosition;
+	}
+
+	public void setGunGeneralPosition(Integer gunGeneralPosition) {
+		this.gunGeneralPosition = gunGeneralPosition;
+	}
+
+	public void setGunBranchPosition(Integer gunBranchPosition) {
+		this.gunBranchPosition = gunBranchPosition;
+	}
+
+	public void setGunCategoryPosition(Integer gunCategoryPosition) {
+		this.gunCategoryPosition = gunCategoryPosition;
+	}
+
+	public void setChipGeneralPosition(Integer chipGeneralPosition) {
+		this.chipGeneralPosition = chipGeneralPosition;
+	}
+
+	public void setChipBranchPosition(Integer chipBranchPosition) {
+		this.chipBranchPosition = chipBranchPosition;
+	}
+
+	public void setChipCategoryPosition(Integer chipCategoryPosition) {
+		this.chipCategoryPosition = chipCategoryPosition;
+	}
+
+	public String getPhaseTitle() {
+		return phaseTitle;
+	}
+
+	public String getLapTitle() {
+		return lapTitle;
+	}
+
+	public void setPhaseTitle(String phaseTitle) {
+		this.phaseTitle = phaseTitle;
+	}
+
+	public void setLapTitle(String lapTitle) {
+		this.lapTitle = lapTitle;
 	}
 
 }

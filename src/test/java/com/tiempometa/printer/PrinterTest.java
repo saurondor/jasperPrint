@@ -76,22 +76,22 @@ public class PrinterTest {
 	 */
 	@Test
 	public void testPrintToImage() {
-		List<ResultRow> rows = new ArrayList<ResultRow>();
-		List<ResultSplit> splits = new ArrayList<ResultSplit>();
-		ResultRow row = new ResultRow("22", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic",
-				"Libre Varonil", "1:23:23", "+04:34", "1:26:23", "+06:34", 1, 10, 2, 4, 5, 5, new Date(), "TiempoMeta",
-				"Mexico", splits);
-		rows.add(row);
-		ResultReport report = new ResultReport(reportTemplate, eventTitle, reportTitle, eventSubtitle, eventLocation,
-				eventDate, printDate, eventWebPage, imageTopLeft, imageTopRight, imageBottomLeft, imageBottomRight,
-				categoryName, rows);
-		try {
-			Printer.printToImage(report, 1f);
-			Printer.printToImage(report, 1f);
-		} catch (JRException e) {
-			e.printStackTrace();
-			fail(e.getMessage());
-		}
+//		List<ResultRow> rows = new ArrayList<ResultRow>();
+//		List<ResultSplit> splits = new ArrayList<ResultSplit>();
+//		ResultRow row = new ResultRow("22", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic",
+//				"Libre Varonil", "1:23:23", "+04:34", "1:26:23", "+06:34", 1, 10, 2, 4, 5, 5, new Date(), "TiempoMeta",
+//				"Mexico", splits);
+//		rows.add(row);
+//		ResultReport report = new ResultReport(reportTemplate, eventTitle, reportTitle, eventSubtitle, eventLocation,
+//				eventDate, printDate, eventWebPage, imageTopLeft, imageTopRight, imageBottomLeft, imageBottomRight,
+//				categoryName, rows);
+//		try {
+//			Printer.printToImage(report, 1f);
+//			Printer.printToImage(report, 1f);
+//		} catch (JRException e) {
+//			e.printStackTrace();
+//			fail(e.getMessage());
+//		}
 	}
 
 	/**
@@ -100,22 +100,22 @@ public class PrinterTest {
 	 */
 	@Test
 	public void testPrintToPrinterReportBoolean() {
-		List<ResultRow> rows = new ArrayList<ResultRow>();
-		List<ResultSplit> splits = new ArrayList<ResultSplit>();
-		ResultRow row = new ResultRow("22", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic",
-				"Libre Varonil", "1:23:23", "+04:34", "1:26:23", "+06:34", 1, 10, 2, 4, 5, 5, new Date(), "TiempoMeta",
-				"Mexico", splits);
-		rows.add(row);
-		ResultReport report = new ResultReport(reportTemplate, eventTitle, reportTitle, eventSubtitle, eventLocation,
-				eventDate, printDate, eventWebPage, imageTopLeft, imageTopRight, imageBottomLeft, imageBottomRight,
-				categoryName, rows);
-		try {
-			Printer.printToPrinter(report, false);
-			Printer.printToPrinter(report, true);
-		} catch (JRException e) {
-			e.printStackTrace();
-			fail(e.getMessage());
-		}
+//		List<ResultRow> rows = new ArrayList<ResultRow>();
+//		List<ResultSplit> splits = new ArrayList<ResultSplit>();
+//		ResultRow row = new ResultRow("22", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic",
+//				"Libre Varonil", "1:23:23", "+04:34", "1:26:23", "+06:34", 1, 10, 2, 4, 5, 5, new Date(), "TiempoMeta",
+//				"Mexico", splits);
+//		rows.add(row);
+//		ResultReport report = new ResultReport(reportTemplate, eventTitle, reportTitle, eventSubtitle, eventLocation,
+//				eventDate, printDate, eventWebPage, imageTopLeft, imageTopRight, imageBottomLeft, imageBottomRight,
+//				categoryName, rows);
+//		try {
+//			Printer.printToPrinter(report, false);
+//			Printer.printToPrinter(report, true);
+//		} catch (JRException e) {
+//			e.printStackTrace();
+//			fail(e.getMessage());
+//		}
 	}
 
 	/**
@@ -124,23 +124,23 @@ public class PrinterTest {
 	 */
 	@Test
 	public void testPrintToPrinterReportPrintServiceBoolean() {
-		PrintService[] services = Printer.getPrintServices();
-		List<ResultRow> rows = new ArrayList<ResultRow>();
-		List<ResultSplit> splits = new ArrayList<ResultSplit>();
-		ResultRow row = new ResultRow("22", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic",
-				"Libre Varonil", "1:23:23", "+04:34", "1:26:23", "+06:34", 1, 10, 2, 4, 5, 5, new Date(), "TiempoMeta",
-				"Mexico", splits);
-		rows.add(row);
-		ResultReport report = new ResultReport(reportTemplate, eventTitle, reportTitle, eventSubtitle, eventLocation,
-				eventDate, printDate, eventWebPage, imageTopLeft, imageTopRight, imageBottomLeft, imageBottomRight,
-				categoryName, rows);
-		try {
-			Printer.printToPrinter(report, services[0], false);
-			Printer.printToPrinter(report, services[0], true);
-		} catch (JRException e) {
-			e.printStackTrace();
-			fail(e.getMessage());
-		}
+//		PrintService[] services = Printer.getPrintServices();
+//		List<ResultRow> rows = new ArrayList<ResultRow>();
+//		List<ResultSplit> splits = new ArrayList<ResultSplit>();
+//		ResultRow row = new ResultRow("22", "Gerardo", "Tasistro", "Giubetic", "Gerardo Esteban Tasistro Giubetic",
+//				"Libre Varonil", "1:23:23", "+04:34", "1:26:23", "+06:34", 1, 10, 2, 4, 5, 5, new Date(), "TiempoMeta",
+//				"Mexico", splits);
+//		rows.add(row);
+//		ResultReport report = new ResultReport(reportTemplate, eventTitle, reportTitle, eventSubtitle, eventLocation,
+//				eventDate, printDate, eventWebPage, imageTopLeft, imageTopRight, imageBottomLeft, imageBottomRight,
+//				categoryName, rows);
+//		try {
+//			Printer.printToPrinter(report, services[0], false);
+//			Printer.printToPrinter(report, services[0], true);
+//		} catch (JRException e) {
+//			e.printStackTrace();
+//			fail(e.getMessage());
+//		}
 	}
 
 	@Test

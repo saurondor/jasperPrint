@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:flow="http://www.springframework.org/schema/webflow-config"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+          http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+          http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.xsd
+          http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+          http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-4.0.xsd
+          http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.0.xsd
+          http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+">
+
+
+	<bean id="result_00"
+		class="com.tiempometa.printer.result.ResultRow">
+		<property name="bib" value="234"></property>
+		<property name="firstName" value="Gerardo Esteban"></property>
+		<property name="lastName" value="Tasistro"></property>
+		<property name="middleName" value="Giubetic"></property>
+		<property name="fullName"
+			value="Gerardo Esteban Tasistro Giubetic"></property>
+		<property name="category" value="Master Varonil"></property>
+		<property name="chipTime" value="01:34:23"></property>
+		<property name="chipDiff" value="+00:23"></property>
+		<property name="officialTime" value="01:44:23"></property>
+		<property name="officialDiff" value="+00:23"></property>
+		<property name="officialPace" value="04:23 min/km"></property>
+		<property name="chipPace" value="04:23 min/km"></property>
+		<property name="chipGeneralPosition" value="225"></property>
+		<property name="chipGenderPosition" value="123"></property>
+		<property name="chipCategoryPosition" value="37"></property>
+		<property name="officialGeneralPosition" value="225"></property>
+		<property name="officialGenderPosition" value="123"></property>
+		<property name="officialCategoryPosition" value="1"></property>
+		<!-- <property name="finishDate" value="start"></property> -->
+		<property name="detailColumn1" value="TiempoMeta"></property>
+		<property name="detailColumn2" value="Estado de México"></property>
+		<property name="splits" ref="splits_result_00"></property>
+	</bean>
+
+	<bean id="result_00_split_00"
+		class="com.tiempometa.printer.result.ResultSplit">
+		<property name="phaseTitle" value="Nado"></property>
+		<property name="phaseTime" value="00:34:23"></property>
+		<property name="phaseGeneralPosition" value="23"></property>
+		<property name="phaseBranchPosition" value="12"></property>
+		<property name="phaseCategoryPosition" value="8"></property>
+		<property name="phasePace" value="04:23 min/100m"></property>
+	</bean>
+
+	<bean id="result_00_split_01"
+		class="com.tiempometa.printer.result.ResultSplit">
+		<property name="phaseTitle" value="T1"></property>
+		<property name="phaseTime" value="00:34:23"></property>
+		<property name="phaseGeneralPosition" value="23"></property>
+		<property name="phaseBranchPosition" value="12"></property>
+		<property name="phaseCategoryPosition" value="8"></property>
+		<!-- <property name="phasePace" value="04:23 min/100m"></property> -->
+	</bean>
+
+	<bean id="result_00_split_02"
+		class="com.tiempometa.printer.result.ResultSplit">
+		<property name="phaseTitle" value="Bici"></property>
+		<property name="phaseTime" value="01:34:23"></property>
+		<property name="phaseGeneralPosition" value="23"></property>
+		<property name="phaseBranchPosition" value="12"></property>
+		<property name="phaseCategoryPosition" value="8"></property>
+		<property name="phasePace" value="23 km/hr"></property>
+	</bean>
+
+	<bean id="result_00_split_03"
+		class="com.tiempometa.printer.result.ResultSplit">
+		<property name="phaseTitle" value="T2"></property>
+		<property name="phaseTime" value="00:34:23"></property>
+		<property name="phaseGeneralPosition" value="23"></property>
+		<property name="phaseBranchPosition" value="12"></property>
+		<property name="phaseCategoryPosition" value="8"></property>
+		<!-- <property name="phasePace" value="04:23 min/100m"></property> -->
+	</bean>
+
+	<bean id="result_00_split_04"
+		class="com.tiempometa.printer.result.ResultSplit">
+		<property name="phaseTitle" value="Carrera"></property>
+		<property name="phaseTime" value="00:54:23"></property>
+		<property name="phaseGeneralPosition" value="23"></property>
+		<property name="phaseBranchPosition" value="12"></property>
+		<property name="phaseCategoryPosition" value="8"></property>
+		<property name="phasePace" value="04:23 min/km"></property>
+	</bean>
+
+	<util:list id="splits_result_00"
+		value-type="com.tiempometa.printer.result.ResultSplit">
+		<ref bean="result_00_split_00" />
+		<ref bean="result_00_split_01" />
+		<ref bean="result_00_split_02" />
+		<ref bean="result_00_split_03" />
+		<ref bean="result_00_split_04" />
+	</util:list>
+
+	<bean id="result_01"
+		class="com.tiempometa.printer.result.ResultRow">
+		<property name="bib" value="123"></property>
+		<property name="firstName" value="Humberto Gabriel"></property>
+		<property name="lastName" value="Santiz"></property>
+		<property name="middleName" value="Terat"></property>
+		<property name="fullName"
+			value="Humberto Gabriel Santiz Terat"></property>
+		<property name="category" value="Master Varonil"></property>
+		<property name="chipTime" value="01:34:23"></property>
+		<property name="chipDiff" value="+00:23"></property>
+		<property name="officialTime" value="01:44:23"></property>
+		<property name="officialDiff" value="+00:23"></property>
+		<property name="officialPace" value="04:23 min/km"></property>
+		<property name="chipPace" value="04:23 min/km"></property>
+		<property name="chipGeneralPosition" value="225"></property>
+		<property name="chipGenderPosition" value="123"></property>
+		<property name="chipCategoryPosition" value="37"></property>
+		<property name="officialGeneralPosition" value="225"></property>
+		<property name="officialGenderPosition" value="123"></property>
+		<property name="officialCategoryPosition" value="2"></property>
+		<!-- <property name="finishDate" value="start"></property> -->
+		<property name="detailColumn1"
+			value="LOBOS MTB MATIAS ROMERO"></property>
+		<property name="detailColumn2" value="Veracruz"></property>
+		<property name="splits" ref="splits_result_00"></property>
+	</bean>
+
+	<bean id="result_02"
+		class="com.tiempometa.printer.result.ResultRow">
+		<property name="bib" value="531"></property>
+		<property name="firstName" value="José Luis"></property>
+		<property name="lastName" value="Zuñiga"></property>
+		<property name="middleName" value="Duran"></property>
+		<property name="fullName" value="José Luis Zuñiga Duran"></property>
+		<property name="category" value="Master Varonil"></property>
+		<property name="chipTime" value="01:34:23"></property>
+		<property name="chipDiff" value="+00:23"></property>
+		<property name="officialTime" value="01:44:23"></property>
+		<property name="officialDiff" value="+00:23"></property>
+		<property name="officialPace" value="04:23 min/km"></property>
+		<property name="chipPace" value="04:23 min/km"></property>
+		<property name="chipGeneralPosition" value="225"></property>
+		<property name="chipGenderPosition" value="123"></property>
+		<property name="chipCategoryPosition" value="37"></property>
+		<property name="officialGeneralPosition" value="225"></property>
+		<property name="officialGenderPosition" value="123"></property>
+		<property name="officialCategoryPosition" value="3"></property>
+		<!-- <property name="finishDate" value="start"></property> -->
+		<property name="detailColumn1"
+			value="GUNAA ZAA MTB MATIAS ROMERO"></property>
+		<property name="detailColumn2" value="Chiapas"></property>
+		<property name="splits" ref="splits_result_00"></property>
+	</bean>
+
+	<bean id="result_03"
+		class="com.tiempometa.printer.result.ResultRow">
+		<property name="bib" value="34"></property>
+		<property name="firstName" value="Diego Armando"></property>
+		<property name="lastName" value="Mancilla Meza"></property>
+		<property name="middleName" value=""></property>
+		<property name="fullName" value="Diego Armando Mancilla Meza"></property>
+		<property name="category" value="Master Varonil"></property>
+		<property name="chipTime" value="01:34:23"></property>
+		<property name="chipDiff" value="+00:23"></property>
+		<property name="officialTime" value="01:44:23"></property>
+		<property name="officialDiff" value="+00:23"></property>
+		<property name="officialPace" value="04:23 min/km"></property>
+		<property name="chipPace" value="04:23 min/km"></property>
+		<property name="chipGeneralPosition" value="225"></property>
+		<property name="chipGenderPosition" value="123"></property>
+		<property name="chipCategoryPosition" value="37"></property>
+		<property name="officialGeneralPosition" value="225"></property>
+		<property name="officialGenderPosition" value="123"></property>
+		<property name="officialCategoryPosition" value="4"></property>
+		<!-- <property name="finishDate" value="start"></property> -->
+		<property name="detailColumn1" value="PEDALEROS"></property>
+		<property name="detailColumn2" value="Veracruz"></property>
+		<property name="splits" ref="splits_result_00"></property>
+	</bean>
+
+	<bean id="result_04"
+		class="com.tiempometa.printer.result.ResultRow">
+		<property name="bib" value="1221"></property>
+		<property name="firstName" value="German"></property>
+		<property name="lastName" value="De Los Santos"></property>
+		<property name="middleName" value="Cortes"></property>
+		<property name="fullName" value="German De Los Santos Cortes"></property>
+		<property name="category" value="Master Varonil"></property>
+		<property name="chipTime" value="01:34:23"></property>
+		<property name="chipDiff" value="+00:23"></property>
+		<property name="officialTime" value="01:44:23"></property>
+		<property name="officialDiff" value="+00:23"></property>
+		<property name="officialPace" value="04:23 min/km"></property>
+		<property name="chipPace" value="04:23 min/km"></property>
+		<property name="chipGeneralPosition" value="225"></property>
+		<property name="chipGenderPosition" value="123"></property>
+		<property name="chipCategoryPosition" value="37"></property>
+		<property name="officialGeneralPosition" value="225"></property>
+		<property name="officialGenderPosition" value="123"></property>
+		<property name="officialCategoryPosition" value="5"></property>
+		<!-- <property name="finishDate" value="start"></property> -->
+		<property name="detailColumn1"
+			value="ANGEL OLIVARES BICICLETAS Y REFACCIONES"></property>
+		<property name="detailColumn2" value="Chiapas"></property>
+		<property name="splits" ref="splits_result_00"></property>
+	</bean>
+
+	<bean id="result_05"
+		class="com.tiempometa.printer.result.ResultRow">
+		<property name="bib" value="12342"></property>
+		<property name="firstName" value="Juan Fernando"></property>
+		<property name="lastName" value="Perez Valencia"></property>
+		<property name="middleName" value=""></property>
+		<property name="fullName"
+			value="Juan Fernando Perez Valencia"></property>
+		<property name="category" value="Master Varonil"></property>
+		<property name="chipTime" value="01:34:23"></property>
+		<property name="chipDiff" value="+00:23"></property>
+		<property name="officialTime" value="01:44:23"></property>
+		<property name="officialDiff" value="+00:23"></property>
+		<property name="officialPace" value="04:23 min/km"></property>
+		<property name="chipPace" value="04:23 min/km"></property>
+		<property name="chipGeneralPosition" value="225"></property>
+		<property name="chipGenderPosition" value="123"></property>
+		<property name="chipCategoryPosition" value="37"></property>
+		<property name="officialGeneralPosition" value="225"></property>
+		<property name="officialGenderPosition" value="123"></property>
+		<property name="officialCategoryPosition" value="6"></property>
+		<!-- <property name="finishDate" value="start"></property> -->
+		<property name="detailColumn1" value=""></property>
+		<property name="detailColumn2" value="Oaxaca"></property>
+		<property name="splits" ref="splits_result_00"></property>
+	</bean>
+
+	<bean id="result_06"
+		class="com.tiempometa.printer.result.ResultRow">
+		<property name="bib" value="632"></property>
+		<property name="firstName" value="Marco Antonio"></property>
+		<property name="lastName" value="Larrinaga Hernández"></property>
+		<property name="middleName" value=""></property>
+		<property name="fullName"
+			value="Marco Antonio Larrinaga Hernández"></property>
+		<property name="category" value="Master Varonil"></property>
+		<property name="chipTime" value="01:34:23"></property>
+		<property name="chipDiff" value="+00:23"></property>
+		<property name="officialTime" value="01:44:23"></property>
+		<property name="officialDiff" value="+00:23"></property>
+		<property name="officialPace" value="04:23 min/km"></property>
+		<property name="chipPace" value="04:23 min/km"></property>
+		<property name="chipGeneralPosition" value="225"></property>
+		<property name="chipGenderPosition" value="123"></property>
+		<property name="chipCategoryPosition" value="37"></property>
+		<property name="officialGeneralPosition" value="225"></property>
+		<property name="officialGenderPosition" value="123"></property>
+		<property name="officialCategoryPosition" value="7"></property>
+		<!-- <property name="finishDate" value="start"></property> -->
+		<property name="detailColumn1"
+			value="CORRECAMINOS MTB TAPACHULA"></property>
+		<property name="detailColumn2" value=""></property>
+		<property name="splits" ref="splits_result_00"></property>
+	</bean>
+
+	<bean id="result_07"
+		class="com.tiempometa.printer.result.ResultRow">
+		<property name="bib" value="4"></property>
+		<property name="firstName" value="Saul"></property>
+		<property name="lastName" value="Martínez Rodriguez"></property>
+		<property name="middleName" value=""></property>
+		<property name="fullName" value="Saul Martínez Rodriguez"></property>
+		<property name="category" value="Master Varonil"></property>
+		<property name="chipTime" value="01:34:23"></property>
+		<property name="chipDiff" value="+00:23"></property>
+		<property name="officialTime" value="01:44:23"></property>
+		<property name="officialDiff" value="+00:23"></property>
+		<property name="officialPace" value="04:23 min/km"></property>
+		<property name="chipPace" value="04:23 min/km"></property>
+		<property name="chipGeneralPosition" value="225"></property>
+		<property name="chipGenderPosition" value="123"></property>
+		<property name="chipCategoryPosition" value="37"></property>
+		<property name="officialGeneralPosition" value="225"></property>
+		<property name="officialGenderPosition" value="123"></property>
+		<property name="officialCategoryPosition" value="8"></property>
+		<!-- <property name="finishDate" value="start"></property> -->
+		<property name="detailColumn1"
+			value="IGUANAS NIGHT RIDERS (INR)"></property>
+		<property name="detailColumn2" value="Quintana Roo"></property>
+		<property name="splits" ref="splits_result_00"></property>
+	</bean>
+
+	<bean id="result_08"
+		class="com.tiempometa.printer.result.ResultRow">
+		<property name="bib" value="23422"></property>
+		<property name="firstName" value="Carlos Emilio"></property>
+		<property name="lastName" value="Ramirez Hernandez"></property>
+		<property name="middleName" value=""></property>
+		<property name="fullName"
+			value="Carlos Emilio Ramirez Hernandez"></property>
+		<property name="category" value="Master Varonil"></property>
+		<property name="chipTime" value="01:34:23"></property>
+		<property name="chipDiff" value="+00:23"></property>
+		<property name="officialTime" value="01:44:23"></property>
+		<property name="officialDiff" value="+00:23"></property>
+		<property name="officialPace" value="04:23 min/km"></property>
+		<property name="chipPace" value="04:23 min/km"></property>
+		<property name="chipGeneralPosition" value="225"></property>
+		<property name="chipGenderPosition" value="123"></property>
+		<property name="chipCategoryPosition" value="37"></property>
+		<property name="officialGeneralPosition" value="225"></property>
+		<property name="officialGenderPosition" value="123"></property>
+		<property name="officialCategoryPosition" value="9"></property>
+		<!-- <property name="finishDate" value="start"></property> -->
+		<property name="detailColumn1"
+			value="*COMPETIDOR INDEPENDIENTE*"></property>
+		<property name="detailColumn2" value=""></property>
+		<property name="splits" ref="splits_result_00"></property>
+	</bean>
+
+	<bean id="result_09"
+		class="com.tiempometa.printer.result.ResultRow">
+		<property name="bib" value="2343"></property>
+		<property name="firstName" value="Felipe Amaral"></property>
+		<property name="lastName" value="Ucan Yeh"></property>
+		<property name="middleName" value=""></property>
+		<property name="fullName" value="Felipe Amaral Ucan Yeh"></property>
+		<property name="category" value="Master Varonil"></property>
+		<property name="chipTime" value="01:34:23"></property>
+		<property name="chipDiff" value="+00:23"></property>
+		<property name="officialTime" value="01:44:23"></property>
+		<property name="officialDiff" value="+00:23"></property>
+		<property name="officialPace" value="04:23 min/km"></property>
+		<property name="chipPace" value="04:23 min/km"></property>
+		<property name="chipGeneralPosition" value="225"></property>
+		<property name="chipGenderPosition" value="123"></property>
+		<property name="chipCategoryPosition" value="37"></property>
+		<property name="officialGeneralPosition" value="225"></property>
+		<property name="officialGenderPosition" value="123"></property>
+		<property name="officialCategoryPosition" value="10"></property>
+		<!-- <property name="finishDate" value="start"></property> -->
+		<property name="detailColumn1"
+			value="GUERREROS DE BUENOS AIRES"></property>
+		<property name="detailColumn2" value="Veracruz"></property>
+		<property name="splits" ref="splits_result_00"></property>
+	</bean>
+
+	<bean id="result_10"
+		class="com.tiempometa.printer.result.ResultRow">
+		<property name="bib" value="934"></property>
+		<property name="firstName" value="Luis Adrián"></property>
+		<property name="lastName" value="Castañón Zúñiga"></property>
+		<property name="middleName" value=""></property>
+		<property name="fullName" value="Luis Adrián Castañón Zúñiga"></property>
+		<property name="category" value="Master Varonil"></property>
+		<property name="chipTime" value="01:34:23"></property>
+		<property name="chipDiff" value="+00:23"></property>
+		<property name="officialTime" value="01:44:23"></property>
+		<property name="officialDiff" value="+00:23"></property>
+		<property name="officialPace" value="04:23 min/km"></property>
+		<property name="chipPace" value="04:23 min/km"></property>
+		<property name="chipGeneralPosition" value="225"></property>
+		<property name="chipGenderPosition" value="123"></property>
+		<property name="chipCategoryPosition" value="37"></property>
+		<property name="officialGeneralPosition" value="225"></property>
+		<property name="officialGenderPosition" value="123"></property>
+		<property name="officialCategoryPosition" value="11"></property>
+		<!-- <property name="finishDate" value="start"></property> -->
+		<property name="detailColumn1" value="AY NANITA CYCLING TEAM"></property>
+		<property name="detailColumn2" value="Veracruz"></property>
+		<property name="splits" ref="splits_result_00"></property>
+	</bean>
+
+	<util:list id="result_rows"
+		value-type="com.tiempometa.printer.result.ResultRow">
+		<ref bean="result_00" />
+		<ref bean="result_01" />
+		<ref bean="result_02" />
+		<ref bean="result_03" />
+		<ref bean="result_04" />
+		<ref bean="result_05" />
+		<ref bean="result_06" />
+		<ref bean="result_07" />
+		<ref bean="result_08" />
+		<ref bean="result_09" />
+		<ref bean="result_10" />
+	</util:list>
+
+	<bean id="result_report"
+		class="com.tiempometa.printer.result.ResultReport">
+		<property name="eventTitle" value="10K Nuevo Sol"></property>
+		<property name="eventSubtitle" value="Corre en tu casa"></property>
+		<property name="eventLocation"
+			value="San Escritorio de Laptoptitlan"></property>
+		<property name="eventDate" value="20 de Abril del 2020"></property>
+		<property name="imageTopLeft"
+			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property>
+		<property name="imageTopRight"
+			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property>
+		<property name="imageBottomLeft"
+			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property>
+		<property name="imageBottomRight"
+			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property>
+		<property name="eventWebPage" value="www.tusitio.com"></property>
+		<property name="eventMessage"
+			value="Consulta tus resultados en www.tusitio.com"></property>
+		<property name="reportTemplate" value="start"></property>
+		<property name="reportTitle" value="Master Varonil"></property>
+		<property name="printDate"
+			value="20 de Abril del 2020 11:45 AM"></property>
+		<property name="printMode" value="1"></property>
+		<property name="reportType" value="1"></property>
+		<property name="rows" ref="result_rows"></property>
+	</bean>
+</beans>

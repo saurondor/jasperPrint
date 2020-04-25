@@ -21,9 +21,11 @@ public class ResultRow {
 	private String fullName;
 	private String category;
 	private String chipTime;
+	private String chipPace;
 	private String chipDiff;
 	private String officialTime;
 	private String officialDiff;
+	private String officialPace;
 	private Integer chipGeneralPosition;
 	private Integer chipGenderPosition;
 	private Integer chipCategoryPosition;
@@ -31,11 +33,10 @@ public class ResultRow {
 	private Integer officialGenderPosition;
 	private Integer officialCategoryPosition;
 	private Date finishDate;
-	private String team;
-	private String procedence;
+	private String detailColumn1;
+	private String detailColumn2;
 	private List<ResultSplit> splits = new ArrayList<ResultSplit>();
 	JRBeanCollectionDataSource splitsDataSource;
-
 
 	public ResultRow() {
 		super();
@@ -43,10 +44,11 @@ public class ResultRow {
 	}
 
 	public ResultRow(String bib, String firstName, String lastName, String middleName, String fullName, String category,
-			String chipTime, String chipDiff, String officialTime, String officialDiff, Integer chipGeneralPosition,
-			Integer chipGenderPosition, Integer chipCategoryPosition, Integer officialGeneralPosition,
-			Integer officialGenderPosition, Integer officialCategoryPosition, Date finishDate, String team,
-			String procedence, List<ResultSplit> splits) {
+			String chipTime, String chipPace, String chipDiff, String officialTime, String officialDiff,
+			String officialPace, Integer chipGeneralPosition, Integer chipGenderPosition, Integer chipCategoryPosition,
+			Integer officialGeneralPosition, Integer officialGenderPosition, Integer officialCategoryPosition,
+			Date finishDate, String detailColumn1, String detailColumn2, List<ResultSplit> splits,
+			JRBeanCollectionDataSource splitsDataSource) {
 		super();
 		this.bib = bib;
 		this.firstName = firstName;
@@ -55,9 +57,11 @@ public class ResultRow {
 		this.fullName = fullName;
 		this.category = category;
 		this.chipTime = chipTime;
+		this.chipPace = chipPace;
 		this.chipDiff = chipDiff;
 		this.officialTime = officialTime;
 		this.officialDiff = officialDiff;
+		this.officialPace = officialPace;
 		this.chipGeneralPosition = chipGeneralPosition;
 		this.chipGenderPosition = chipGenderPosition;
 		this.chipCategoryPosition = chipCategoryPosition;
@@ -65,9 +69,10 @@ public class ResultRow {
 		this.officialGenderPosition = officialGenderPosition;
 		this.officialCategoryPosition = officialCategoryPosition;
 		this.finishDate = finishDate;
-		this.team = team;
-		this.procedence = procedence;
+		this.detailColumn1 = detailColumn1;
+		this.detailColumn2 = detailColumn2;
 		this.splits = splits;
+		this.splitsDataSource = splitsDataSource;
 	}
 
 	/**
@@ -309,34 +314,6 @@ public class ResultRow {
 	}
 
 	/**
-	 * @return the team
-	 */
-	public String getTeam() {
-		return team;
-	}
-
-	/**
-	 * @param team the team to set
-	 */
-	public void setTeam(String team) {
-		this.team = team;
-	}
-
-	/**
-	 * @return the procedence
-	 */
-	public String getProcedence() {
-		return procedence;
-	}
-
-	/**
-	 * @param procedence the procedence to set
-	 */
-	public void setProcedence(String procedence) {
-		this.procedence = procedence;
-	}
-
-	/**
 	 * @return the splits
 	 */
 	public List<ResultSplit> getSplits() {
@@ -351,29 +328,93 @@ public class ResultRow {
 		this.splitsDataSource = new JRBeanCollectionDataSource(this.splits, false);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "ResultRow [bib=" + bib + ", firstName=" + firstName + ", lastName=" + lastName + ", middleName="
-				+ middleName + ", fullName=" + fullName + ", category=" + category + ", chipTime=" + chipTime
-				+ ", chipDiff=" + chipDiff + ", officialTime=" + officialTime + ", officialDiff=" + officialDiff
-				+ ", chipGeneralPosition=" + chipGeneralPosition + ", chipGenderPosition=" + chipGenderPosition
-				+ ", chipCategoryPosition=" + chipCategoryPosition + ", officialGeneralPosition="
-				+ officialGeneralPosition + ", officialGenderPosition=" + officialGenderPosition
-				+ ", officialCategoryPosition=" + officialCategoryPosition + ", finishDate=" + finishDate + ", team="
-				+ team + ", procedence=" + procedence + ", splits=" + splits + "]";
-	}
-
 	public synchronized JRBeanCollectionDataSource getSplitsDataSource() {
 		return splitsDataSource;
 	}
 
 	public synchronized void setSplitsDataSource(JRBeanCollectionDataSource splitsDataSource) {
 		this.splitsDataSource = splitsDataSource;
+	}
+
+	public String getDetailColumn1() {
+		return detailColumn1;
+	}
+
+	public String getDetailColumn2() {
+		return detailColumn2;
+	}
+
+	public void setDetailColumn1(String detailColumn1) {
+		this.detailColumn1 = detailColumn1;
+	}
+
+	public void setDetailColumn2(String detailColumn2) {
+		this.detailColumn2 = detailColumn2;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("ResultRow [bib=");
+		builder.append(bib);
+		builder.append(", firstName=");
+		builder.append(firstName);
+		builder.append(", lastName=");
+		builder.append(lastName);
+		builder.append(", middleName=");
+		builder.append(middleName);
+		builder.append(", fullName=");
+		builder.append(fullName);
+		builder.append(", category=");
+		builder.append(category);
+		builder.append(", chipTime=");
+		builder.append(chipTime);
+		builder.append(", chipDiff=");
+		builder.append(chipDiff);
+		builder.append(", officialTime=");
+		builder.append(officialTime);
+		builder.append(", officialDiff=");
+		builder.append(officialDiff);
+		builder.append(", chipGeneralPosition=");
+		builder.append(chipGeneralPosition);
+		builder.append(", chipGenderPosition=");
+		builder.append(chipGenderPosition);
+		builder.append(", chipCategoryPosition=");
+		builder.append(chipCategoryPosition);
+		builder.append(", officialGeneralPosition=");
+		builder.append(officialGeneralPosition);
+		builder.append(", officialGenderPosition=");
+		builder.append(officialGenderPosition);
+		builder.append(", officialCategoryPosition=");
+		builder.append(officialCategoryPosition);
+		builder.append(", finishDate=");
+		builder.append(finishDate);
+		builder.append(", detailColumn1=");
+		builder.append(detailColumn1);
+		builder.append(", detailColumn2=");
+		builder.append(detailColumn2);
+		builder.append(", splits=");
+		builder.append(splits);
+		builder.append(", splitsDataSource=");
+		builder.append(splitsDataSource);
+		builder.append("]");
+		return builder.toString();
+	}
+
+	public String getChipPace() {
+		return chipPace;
+	}
+
+	public String getOfficialPace() {
+		return officialPace;
+	}
+
+	public void setChipPace(String chipPace) {
+		this.chipPace = chipPace;
+	}
+
+	public void setOfficialPace(String officialPace) {
+		this.officialPace = officialPace;
 	}
 
 }

@@ -16,19 +16,16 @@ import javax.print.PrintService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.tiempometa.printer.result.ResultReport;
-import com.tiempometa.printer.result.ResultRow;
-import com.tiempometa.printer.result.ResultSplit;
+import com.tiempometa.printer.result.TeamResultReport;
 
 import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JRExporterParameter;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.export.JRPrintServiceExporter;
-import net.sf.jasperreports.engine.export.JRPrintServiceExporterParameter;
 import net.sf.jasperreports.view.JasperViewer;
 
 /**
@@ -36,7 +33,9 @@ import net.sf.jasperreports.view.JasperViewer;
  *
  */
 public class TestTemplate {
-	private static final String TEMPLATE = "C:\\Users\\gtasi\\JaspersoftWorkspace\\MyReports\\results_listing.jrxml";
+	private static final String SPLITS_TEMPLATE = "C:\\Users\\gtasi\\JaspersoftWorkspace\\MyReports\\results_listing_splits.jrxml";
+	private static final String SIMPLE_TEMPLATE = "C:\\Users\\gtasi\\JaspersoftWorkspace\\MyReports\\results_listing_simple.jrxml";
+	private static final String TEAMS_TEMPLATE = "C:\\Users\\gtasi\\JaspersoftWorkspace\\MyReports\\results_listing_teams.jrxml";
 
 	/**
 	 * @throws java.lang.Exception
@@ -53,45 +52,80 @@ public class TestTemplate {
 	}
 
 	@Test
-	public void testTemplate() {
+	public void testTeamTemplate() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test_team_print_report.xml");
 		FileInputStream inputStream;
 		try {
-			File inputFile = new File(TEMPLATE);
+			File inputFile = new File(TEAMS_TEMPLATE);
 			if (!inputFile.exists()) {
 				fail("Template file does not exist");
 			}
 			inputStream = new FileInputStream(inputFile);
-//			inputStream.
-			List<ResultRow> rows = new ArrayList<ResultRow>();
-			ResultRow row = new ResultRow();
-			row.setFullName("TEST NAME");
-			ResultSplit split = new ResultSplit();
-			List<ResultSplit> splits = new ArrayList<ResultSplit>();
-			split.setName("5K");
-			split.setTime("12:18:45.34");
-			split.setSpeed("04:23 min/km");
-			splits.add(split);
-			split = new ResultSplit();
-			split.setName("10K");
-			split.setTime("11:17:45.89");
-			split.setSpeed("04:13 min/km");
-			splits.add(split);
-			row.setSplits(splits);
-			rows.add(row);
-			ResultReport report = new ResultReport(TEMPLATE, rows);
+			TeamResultReport report = (TeamResultReport) ctx.getBean("team_result_report");
 			JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
 			JasperPrint print = JasperFillManager.fillReport(jasperReport, report.getParamMap(),
 					report.getDataSource());
 			JasperViewer.viewReport(print);
-			Thread.sleep(20000);
-//			JRPrintServiceExporter exporter = new JRPrintServiceExporter();
-//			PrintService printService = getPrintService();
-//			exporter.setParameter(JRExporterParameter.JASPER_PRINT, print);
-//			exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE_ATTRIBUTE_SET,
-//					printService.getAttributes());
-//			exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PAGE_DIALOG, Boolean.FALSE);
-//			exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PRINT_DIALOG, true);
-//			exporter.exportReport();
+			Thread.sleep(30000);
+			ctx.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JRException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void testSimpleTemplate() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test_print_report.xml");
+		FileInputStream inputStream;
+		try {
+			File inputFile = new File(SIMPLE_TEMPLATE);
+			if (!inputFile.exists()) {
+				fail("Template file does not exist");
+			}
+			inputStream = new FileInputStream(inputFile);
+			ResultReport report = (ResultReport) ctx.getBean("result_report");
+			JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
+			JasperPrint print = JasperFillManager.fillReport(jasperReport, report.getParamMap(),
+					report.getDataSource());
+			JasperViewer.viewReport(print);
+			Thread.sleep(30000);
+			ctx.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JRException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void testSplitsTemplate() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test_print_report.xml");
+		FileInputStream inputStream;
+		try {
+			File inputFile = new File(SPLITS_TEMPLATE);
+			if (!inputFile.exists()) {
+				fail("Template file does not exist");
+			}
+			inputStream = new FileInputStream(inputFile);
+			ResultReport report = (ResultReport) ctx.getBean("result_report");
+			JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
+			JasperPrint print = JasperFillManager.fillReport(jasperReport, report.getParamMap(),
+					report.getDataSource());
+			JasperViewer.viewReport(print);
+			Thread.sleep(30000);
+			ctx.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

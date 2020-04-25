@@ -19,25 +19,32 @@ import com.tiempometa.printer.Report;
  */
 public class ResultReport implements Report {
 
-	public static final int OFFICIAL_TIME_TEMPLATE = 0;
-	public static final int CHIP_TIME_TEMPLATE = 1;
-	public static final int OFFICIAL_RESULTS = 0;
-	public static final int PRELIMINARY_RESULTS = 1;
+	public static final int REPORT_TYPE_GUN = 0;
+	public static final int REPORT_TYPE_CHIP = 1;
+	public static final int PRINT_MODE_OFFICIAL = 0;
+	public static final int PRINT_MODE_PRELIMINARY = 1;
 
-	private String reportTemplate;
 	private String eventTitle;
-	private String reportTitle;
 	private String eventSubtitle;
 	private String eventLocation;
 	private String eventDate;
-	private String printDate;
-	private String eventWebPage;
+
 	private String imageTopLeft;
 	private String imageTopRight;
 	private String imageBottomLeft;
 	private String imageBottomRight;
-	private String categoryName;
-	private Integer officialResults;
+
+	private String detailColumn1Title;
+	private String detailColumn2Title;
+
+	private String eventWebPage;
+	private String eventMessage;
+
+	private String reportTemplate;
+	private String reportTitle;
+	private String printDate;
+	private Integer printMode = PRINT_MODE_PRELIMINARY;
+	private Integer reportType = REPORT_TYPE_GUN;
 
 	private List<ResultRow> rows = new ArrayList<ResultRow>();
 
@@ -46,24 +53,29 @@ public class ResultReport implements Report {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ResultReport(String reportTemplate, String eventTitle, String reportTitle, String eventSubtitle,
-			String eventLocation, String eventDate, String printDate, String eventWebPage, String imageTopLeft,
-			String imageTopRight, String imageBottomLeft, String imageBottomRight, String categoryName,
+	public ResultReport(String eventTitle, String eventSubtitle, String eventLocation, String eventDate,
+			String imageTopLeft, String imageTopRight, String imageBottomLeft, String imageBottomRight,
+			String detailColumn1Title, String detailColumn2Title, String eventWebPage, String eventMessage,
+			String reportTemplate, String reportTitle, String printDate, Integer printMode, Integer reportType,
 			List<ResultRow> rows) {
 		super();
-		this.reportTemplate = reportTemplate;
 		this.eventTitle = eventTitle;
-		this.reportTitle = reportTitle;
 		this.eventSubtitle = eventSubtitle;
 		this.eventLocation = eventLocation;
 		this.eventDate = eventDate;
-		this.printDate = printDate;
-		this.eventWebPage = eventWebPage;
 		this.imageTopLeft = imageTopLeft;
 		this.imageTopRight = imageTopRight;
 		this.imageBottomLeft = imageBottomLeft;
 		this.imageBottomRight = imageBottomRight;
-		this.categoryName = categoryName;
+		this.detailColumn1Title = detailColumn1Title;
+		this.detailColumn2Title = detailColumn2Title;
+		this.eventWebPage = eventWebPage;
+		this.eventMessage = eventMessage;
+		this.reportTemplate = reportTemplate;
+		this.reportTitle = reportTitle;
+		this.printDate = printDate;
+		this.printMode = printMode;
+		this.reportType = reportType;
 		this.rows = rows;
 	}
 
@@ -227,20 +239,6 @@ public class ResultReport implements Report {
 	}
 
 	/**
-	 * @return the categoryName
-	 */
-	public String getCategoryName() {
-		return categoryName;
-	}
-
-	/**
-	 * @param categoryName the categoryName to set
-	 */
-	public void setCategoryName(String categoryName) {
-		this.categoryName = categoryName;
-	}
-
-	/**
 	 * @return the rows
 	 */
 	public List<ResultRow> getRows() {
@@ -262,22 +260,23 @@ public class ResultReport implements Report {
 
 	@Override
 	public Map<String, Object> getParamMap() {
-
 		Map<String, Object> paramMap = new HashMap<String, Object>();
-		paramMap.put("EVENT_TITLE", this.getEventTitle());
-		paramMap.put("EVENT_SUBTITLE", this.getEventSubtitle());
-		paramMap.put("EVENT_LOCATION", this.getEventLocation());
-		paramMap.put("EVENT_DATE", this.getEventDate());
-		paramMap.put("EVENT_WEBPAGE", this.getEventWebPage());
-		paramMap.put("REPORT_TITLE", this.getReportTitle());
-		paramMap.put("CATEGORY_NAME", this.getCategoryName());
 		paramMap.put("IMAGE_TOP_RIGHT", this.getImageTopRight());
 		paramMap.put("IMAGE_TOP_LEFT", this.getImageTopLeft());
 		paramMap.put("IMAGE_BOTTOM_RIGHT", this.getImageBottomRight());
 		paramMap.put("IMAGE_BOTTOM_LEFT", this.getImageBottomLeft());
 		paramMap.put("REPORT_PRINT_TIME", this.getPrintDate());
-		paramMap.put("OFFICIAL_RESULTS", this.getOfficialResults());
-
+		paramMap.put("RESULT_REPORT_PRINT_MODE", this.getPrintMode());
+		paramMap.put("RESULT_REPORT_TYPE", this.getReportType());
+		paramMap.put("EVENT_TITLE", this.getEventTitle());
+		paramMap.put("DETAIL_COLUMN_1_TITLE", this.getDetailColumn1Title());
+		paramMap.put("DETAIL_COLUMN_2_TITLE", this.getDetailColumn2Title());
+		paramMap.put("EVENT_SUBTITLE", this.getEventSubtitle());
+		paramMap.put("EVENT_LOCATION", this.getEventLocation());
+		paramMap.put("EVENT_DATE", this.getEventDate());
+		paramMap.put("EVENT_WEBPAGE", this.getEventWebPage());
+		paramMap.put("EVENT_REPORT_TITLE", this.getReportTitle());
+		paramMap.put("EVENT_REPORT_MESSAGE", this.getEventMessage());
 		return paramMap;
 	}
 
@@ -300,12 +299,44 @@ public class ResultReport implements Report {
 		return getReportTemplate();
 	}
 
-	public Integer getOfficialResults() {
-		return officialResults;
+	public String getEventMessage() {
+		return eventMessage;
 	}
 
-	public void setOfficialResults(Integer officialResults) {
-		this.officialResults = officialResults;
+	public Integer getPrintMode() {
+		return printMode;
+	}
+
+	public Integer getReportType() {
+		return reportType;
+	}
+
+	public void setEventMessage(String eventMessage) {
+		this.eventMessage = eventMessage;
+	}
+
+	public void setPrintMode(Integer printMode) {
+		this.printMode = printMode;
+	}
+
+	public void setReportType(Integer reportType) {
+		this.reportType = reportType;
+	}
+
+	public String getDetailColumn1Title() {
+		return detailColumn1Title;
+	}
+
+	public String getDetailColumn2Title() {
+		return detailColumn2Title;
+	}
+
+	public void setDetailColumn1Title(String detailColumn1Title) {
+		this.detailColumn1Title = detailColumn1Title;
+	}
+
+	public void setDetailColumn2Title(String detailColumn2Title) {
+		this.detailColumn2Title = detailColumn2Title;
 	}
 
 }

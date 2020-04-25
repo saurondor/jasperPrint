@@ -12,9 +12,11 @@ import net.sf.jasperreports.engine.JRDataSource;
  *
  */
 public interface Report {
-	
+
 	String getTemplate();
+
 	JRDataSource getDataSource();
+
 	Map<String, Object> getParamMap();
 
 }
