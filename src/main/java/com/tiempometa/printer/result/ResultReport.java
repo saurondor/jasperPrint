@@ -21,8 +21,29 @@ public class ResultReport implements Report {
 
 	public static final int REPORT_TYPE_GUN = 0;
 	public static final int REPORT_TYPE_CHIP = 1;
+	public static final int HIDE_COLUMN = 0;
+	public static final int SHOW_COLUMN = 1;
 	public static final int PRINT_MODE_OFFICIAL = 0;
 	public static final int PRINT_MODE_PRELIMINARY = 1;
+	public static final int PRINT_DISTANCE_TITLE_NONE = 0;
+	public static final int PRINT_DISTANCE_TITLE_POST = 1;
+	public static final int PRINT_DISTANCE_TITLE_PRE = 2;
+	public static final String DETAIL_COLUMN_CITY = "city";
+	public static final String DETAIL_COLUMN_STATE = "state";
+	public static final String DETAIL_COLUMN_TEAM = "team";
+	public static final String DETAIL_COLUMN_REG_EXTRA_1 = "regExtra1";
+	public static final String DETAIL_COLUMN_REG_EXTRA_2 = "regExtra2";
+	public static final String DETAIL_COLUMN_CAT_EXTRA_1 = "catExtra1";
+	public static final String DETAIL_COLUMN_CAT_EXTRA_2 = "catExtra2";
+	public static final String DETAIL_COLUMN_CAT_EXTRA_3 = "catExtra3";
+	public static final String DETAIL_COLUMN_CAT_EXTRA_4 = "catExtra4";
+	public static final String DETAIL_COLUMN_COLOR = "color";
+	public static final String DETAIL_COLUMN_START_TIME = "startTime";
+	public static final String DETAIL_COLUMN_START_DATE_TIME = "startDateTime";
+	public static final String DETAIL_COLUMN_BIB_UUID = "bibUuid";
+	public static final String DETAIL_COLUMN_PASS_CODE = "passCode";
+	public static final String DETAIL_COLUMN_CONFIRMATION_CODE = "confirmationCode";
+	public static final String DETAIL_COLUMN_CUSTOM_CODE = "customCode";
 
 	private String eventTitle;
 	private String eventSubtitle;
@@ -36,6 +57,8 @@ public class ResultReport implements Report {
 
 	private String detailColumn1Title;
 	private String detailColumn2Title;
+	private String detailColumn1Column;
+	private String detailColumn2Column;
 
 	private String eventWebPage;
 	private String eventMessage;
@@ -45,6 +68,8 @@ public class ResultReport implements Report {
 	private String printDate;
 	private Integer printMode = PRINT_MODE_PRELIMINARY;
 	private Integer reportType = REPORT_TYPE_GUN;
+	private Integer showChipTime = SHOW_COLUMN;
+	private Integer showPace = SHOW_COLUMN;
 
 	private List<ResultRow> rows = new ArrayList<ResultRow>();
 
@@ -277,6 +302,8 @@ public class ResultReport implements Report {
 		paramMap.put("EVENT_WEBPAGE", this.getEventWebPage());
 		paramMap.put("EVENT_REPORT_TITLE", this.getReportTitle());
 		paramMap.put("EVENT_REPORT_MESSAGE", this.getEventMessage());
+		paramMap.put("SHOW_CHIP_TIME", this.getShowChipTime());
+		paramMap.put("SHOW_PACE", this.getShowPace());
 		return paramMap;
 	}
 
@@ -337,6 +364,38 @@ public class ResultReport implements Report {
 
 	public void setDetailColumn2Title(String detailColumn2Title) {
 		this.detailColumn2Title = detailColumn2Title;
+	}
+
+	public Integer getShowChipTime() {
+		return showChipTime;
+	}
+
+	public Integer getShowPace() {
+		return showPace;
+	}
+
+	public void setShowChipTime(Integer showChipTime) {
+		this.showChipTime = showChipTime;
+	}
+
+	public void setShowPace(Integer showPace) {
+		this.showPace = showPace;
+	}
+
+	public String getDetailColumn1Column() {
+		return detailColumn1Column;
+	}
+
+	public String getDetailColumn2Column() {
+		return detailColumn2Column;
+	}
+
+	public void setDetailColumn1Column(String detailColumn1Column) {
+		this.detailColumn1Column = detailColumn1Column;
+	}
+
+	public void setDetailColumn2Column(String detailColumn2Column) {
+		this.detailColumn2Column = detailColumn2Column;
 	}
 
 }

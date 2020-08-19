@@ -422,6 +422,72 @@
 			value="20 de Abril del 2020 11:45 AM"></property>
 		<property name="printMode" value="1"></property>
 		<property name="reportType" value="1"></property>
+		<property name="detailColumn1Title" value="Procedencia"></property>
+		<property name="detailColumn2Title" value="Equipo"></property>	
 		<property name="rows" ref="result_rows"></property>
+		<property name="showPace" value="1"></property>
+		<property name="showChipTime" value="1"></property>
+	</bean>
+
+	<bean id="result_report_no_chip_time"
+		class="com.tiempometa.printer.result.ResultReport">
+		<property name="eventTitle" value="10K Nuevo Sol"></property>
+		<property name="eventSubtitle" value="Corre en tu casa"></property>
+		<property name="eventLocation"
+			value="San Escritorio de Laptoptitlan"></property>
+		<property name="eventDate" value="20 de Abril del 2020"></property>
+		<property name="imageTopLeft"
+			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property>
+		<property name="imageTopRight"
+			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property>
+		<property name="imageBottomLeft"
+			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property>
+		<property name="imageBottomRight"
+			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property>
+		<property name="eventWebPage" value="www.tusitio.com"></property>
+		<property name="eventMessage"
+			value="Consulta tus resultados en www.tusitio.com"></property>
+		<property name="reportTemplate" value="start"></property>
+		<property name="reportTitle" value="Master Varonil"></property>
+		<property name="printDate"
+			value="20 de Abril del 2020 11:45 AM"></property>
+		<property name="printMode" value="1"></property>
+		<property name="reportType" value="1"></property>
+		<property name="detailColumn1Title" value="Procedencia"></property>
+		<property name="detailColumn2Title" value="Equipo"></property>
+		<property name="rows" ref="result_rows"></property>
+		<property name="showPace" value="1"></property>
+		<property name="showChipTime" value="0"></property>
+	</bean>
+
+	<bean id="result_report_no_pace"
+		class="com.tiempometa.printer.result.ResultReport">
+		<property name="eventTitle" value="10K Nuevo Sol"></property>
+		<property name="eventSubtitle" value="Corre en tu casa"></property>
+		<property name="eventLocation"
+			value="San Escritorio de Laptoptitlan"></property>
+		<property name="eventDate" value="20 de Abril del 2020"></property>
+		<property name="imageTopLeft"
+			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property>
+		<property name="imageTopRight"
+			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property>
+		<property name="imageBottomLeft"
+			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property>
+		<property name="imageBottomRight"
+			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property>
+		<property name="eventWebPage" value="www.tusitio.com"></property>
+		<property name="eventMessage"
+			value="Consulta tus resultados en www.tusitio.com"></property>
+		<property name="reportTemplate" value="start"></property>
+		<property name="reportTitle" value="Master Varonil"></property>
+		<property name="printDate"
+			value="20 de Abril del 2020 11:45 AM"></property>
+		<property name="printMode" value="1"></property>
+		<property name="reportType" value="1"></property>
+		<property name="detailColumn1Title" value="Procedencia"></property>
+		<property name="detailColumn2Title" value="Equipo"></property>
+		<property name="rows" ref="result_rows"></property>
+		<property name="showPace" value="0"></property>
+		<property name="showChipTime" value="0"></property>
 	</bean>
 </beans>

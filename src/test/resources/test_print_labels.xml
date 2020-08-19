@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:flow="http://www.springframework.org/schema/webflow-config"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+          http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+          http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.xsd
+          http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+          http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-4.0.xsd
+          http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.0.xsd
+          http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+">
+
+
+	<bean id="label_00" class="com.tiempometa.printer.label.LabelRow">
+		<!-- private Image barcode; -->
+		<!-- private Image qrCode; -->
+		<!-- private Image photo; -->
+		<!-- private Image logo; -->
+		<property name="bib" value="21234"></property>
+		<property name="firstName" value="Gerardo Esteban"></property>
+		<property name="lastName" value="Tasistro"></property>
+		<property name="middleName" value="Giubetic"></property>
+		<property name="fullName"
+			value="Gerardo Esteban Tasistro Giubetic"></property>
+		<property name="eventName" value="37"></property>
+		<property name="subeventName" value="225"></property>
+		<property name="category" value="Master Varonil"></property>
+		<property name="categoryKey" value="MV"></property>
+		<property name="email" value="gtasistro@tiempometa.com"></property>
+		<property name="age" value="45"></property>
+		<property name="gender" value="M"></property>
+		<!-- <property name="birthDate" value="+00:23"></property> -->
+		<property name="registrationConfirmation"
+			value="000225af5634dc"></property>
+		<property name="paymentConfirmation" value="225"></property>
+		<property name="paymentAmount" value="123"></property>
+		<property name="address" value="123"></property>
+		<property name="regExtra1" value="1"></property>
+		<property name="regExtra2" value="1"></property>
+		<property name="labelColor" value="1"></property>
+		<property name="catExtra2" value="1"></property>
+		<property name="catExtra3" value="1"></property>
+		<property name="catExtra4" value="1"></property>
+		<property name="catExtra5" value="1"></property>
+		<property name="team" value="1"></property>
+		<property name="state" value="1"></property>
+		<property name="city" value="1"></property>
+		<property name="country" value="1"></property>
+		<property name="companyName" value="1"></property>
+		<property name="jobPosition" value="1"></property>
+		<property name="startTime" value="1"></property>
+<!-- 		<property name="" value="1"></property> -->
+		<property name="registrationDateTime" value="1"></property>
+		<property name="detailColumn1" value="Cirulos Verdes"></property>
+		<property name="detailColumn2" value="Mediana"></property>
+	</bean>
+
+	<util:list id="label_rows"
+		value-type="com.tiempometa.printer.label.LabelRow">
+		<ref bean="label_00" />
+	</util:list>
+
+	<bean id="label_report"
+		class="com.tiempometa.printer.label.LabelReport">
+<!-- 		<property name="eventTitle" value="10K Nuevo Sol"></property> -->
+<!-- 		<property name="eventSubtitle" value="Corre en tu casa"></property> -->
+<!-- 		<property name="eventLocation" -->
+<!-- 			value="San Escritorio de Laptoptitlan"></property> -->
+<!-- 		<property name="eventDate" value="20 de Abril del 2020"></property> -->
+<!-- 		<property name="imageTopLeft" -->
+<!-- 			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property> -->
+<!-- 		<property name="imageTopRight" -->
+<!-- 			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property> -->
+<!-- 		<property name="imageBottomLeft" -->
+<!-- 			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property> -->
+<!-- 		<property name="imageBottomRight" -->
+<!-- 			value="C:\Users\gtasi\Documents\tiempometa\logos\timpometa_icon_large_alpha.png"></property> -->
+<!-- 		<property name="eventWebPage" value="www.tusitio.com"></property> -->
+<!-- 		<property name="eventMessage" -->
+<!-- 			value="Consulta tus resultados en www.tusitio.com"></property> -->
+<!-- 		<property name="reportTemplate" value="start"></property> -->
+<!-- 		<property name="reportTitle" value="Master Varonil"></property> -->
+<!-- 		<property name="printDate" -->
+<!-- 			value="20 de Abril del 2020 11:45 AM"></property> -->
+<!-- 		<property name="printMode" value="1"></property> -->
+<!-- 		<property name="reportType" value="1"></property> -->
+		<property name="detailColumn1Title" value="Color"></property>
+		<property name="detailColumn2Title" value=""></property>
+		<property name="eventMessage" value="RESULTADOS www.precisiontotal.com"></property>
+		<property name="rows" ref="label_rows"></property>
+	</bean>
+
+</beans>

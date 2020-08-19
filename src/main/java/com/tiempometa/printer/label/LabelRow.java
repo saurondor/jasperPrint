@@ -14,6 +14,7 @@ public class LabelRow {
 	private Image barcode;
 	private Image qrCode;
 	private Image photo;
+	private Image logo;
 	private String bib;
 	private String firstName;
 	private String lastName;
@@ -32,136 +33,27 @@ public class LabelRow {
 	private String eventName;
 	private String subeventName;
 	private String address;
-	private String extra1;
-	private String extra2;
-	private String extra3;
-	private String extra4;
-	private String extra5;
-	private Date registrationDate;
+	private String regExtra1;
+	private String regExtra2;
+	private String labelColor;
+	private String catExtra2;
+	private String catExtra3;
+	private String catExtra4;
+	private String catExtra5;
+	private String registrationDateTime;
 	private String team;
-	private String procedence;
+	private String state;
+	private String city;
+	private String country;
 	private String companyName;
 	private String jobPosition;
 	private String startTime;
-	private String labelColor;
+	private String detailColumn1;
+	private String detailColumn2;
 
 	public LabelRow() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public LabelRow(String bib, String firstName, String lastName, String middleName, String fullName, String email,
-			Integer age, String gender, Date birthDate, String category, String categoryKey,
-			String registrationConfirmation, String registrationOperation, String paymentConfirmation,
-			String paymentAmount, String eventName, String subeventName, String address, String extra1, String extra2,
-			String extra3, String extra4, String extra5, Date registrationDate, String team, String procedence,
-			Image barcode, Image qrCode, Image photo, String companyName, String jobPosition) {
-		super();
-		this.barcode = barcode;
-		this.qrCode = qrCode;
-		this.photo = photo;
-		this.bib = bib;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.middleName = middleName;
-		this.fullName = fullName;
-		this.email = email;
-		this.age = age;
-		this.gender = gender;
-		this.birthDate = birthDate;
-		this.category = category;
-		this.categoryKey = categoryKey;
-		this.registrationConfirmation = registrationConfirmation;
-		this.registrationOperation = registrationOperation;
-		this.paymentConfirmation = paymentConfirmation;
-		this.paymentAmount = paymentAmount;
-		this.eventName = eventName;
-		this.subeventName = subeventName;
-		this.address = address;
-		this.extra1 = extra1;
-		this.extra2 = extra2;
-		this.extra3 = extra3;
-		this.extra4 = extra4;
-		this.extra5 = extra5;
-		this.registrationDate = registrationDate;
-		this.team = team;
-		this.procedence = procedence;
-		this.companyName = companyName;
-		this.jobPosition = jobPosition;
-	}
-
-	public LabelRow(String bib, String firstName, String lastName, String middleName, String fullName, String email,
-			Integer age, String gender, Date birthDate, String category, String categoryKey,
-			String registrationConfirmation, String registrationOperation, String paymentConfirmation,
-			String paymentAmount, String eventName, String subeventName, String address, String extra1, String extra2,
-			String extra3, String extra4, String extra5, Date registrationDate, String team, String procedence,
-			Image barcode, Image qrCode, Image photo) {
-		super();
-		this.bib = bib;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.middleName = middleName;
-		this.fullName = fullName;
-		this.email = email;
-		this.age = age;
-		this.gender = gender;
-		this.birthDate = birthDate;
-		this.category = category;
-		this.categoryKey = categoryKey;
-		this.registrationConfirmation = registrationConfirmation;
-		this.registrationOperation = registrationOperation;
-		this.paymentConfirmation = paymentConfirmation;
-		this.paymentAmount = paymentAmount;
-		this.eventName = eventName;
-		this.subeventName = subeventName;
-		this.address = address;
-		this.extra1 = extra1;
-		this.extra2 = extra2;
-		this.extra3 = extra3;
-		this.extra4 = extra4;
-		this.extra5 = extra5;
-		this.registrationDate = registrationDate;
-		this.team = team;
-		this.procedence = procedence;
-		this.barcode = barcode;
-		this.qrCode = qrCode;
-		this.photo = photo;
-	}
-
-	public LabelRow(String bib, String firstName, String lastName, String middleName, String fullName, String email,
-			Integer age, String gender, Date birthDate, String category, String categoryKey,
-			String registrationConfirmation, String registrationOperation, String paymentConfirmation,
-			String paymentAmount, String eventName, String subeventName, String address, String extra1, String extra2,
-			String extra3, String extra4, String extra5, Date registrationDate, String team, String procedence,
-			Image barcode) {
-		super();
-		this.bib = bib;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.middleName = middleName;
-		this.fullName = fullName;
-		this.email = email;
-		this.age = age;
-		this.gender = gender;
-		this.birthDate = birthDate;
-		this.category = category;
-		this.categoryKey = categoryKey;
-		this.registrationConfirmation = registrationConfirmation;
-		this.registrationOperation = registrationOperation;
-		this.paymentConfirmation = paymentConfirmation;
-		this.paymentAmount = paymentAmount;
-		this.eventName = eventName;
-		this.subeventName = subeventName;
-		this.address = address;
-		this.extra1 = extra1;
-		this.extra2 = extra2;
-		this.extra3 = extra3;
-		this.extra4 = extra4;
-		this.extra5 = extra5;
-		this.registrationDate = registrationDate;
-		this.team = team;
-		this.procedence = procedence;
-		this.barcode = barcode;
 	}
 
 	/**
@@ -417,90 +309,6 @@ public class LabelRow {
 	}
 
 	/**
-	 * @return the extra1
-	 */
-	public String getExtra1() {
-		return extra1;
-	}
-
-	/**
-	 * @param extra1 the extra1 to set
-	 */
-	public void setExtra1(String extra1) {
-		this.extra1 = extra1;
-	}
-
-	/**
-	 * @return the extra2
-	 */
-	public String getExtra2() {
-		return extra2;
-	}
-
-	/**
-	 * @param extra2 the extra2 to set
-	 */
-	public void setExtra2(String extra2) {
-		this.extra2 = extra2;
-	}
-
-	/**
-	 * @return the extra3
-	 */
-	public String getExtra3() {
-		return extra3;
-	}
-
-	/**
-	 * @param extra3 the extra3 to set
-	 */
-	public void setExtra3(String extra3) {
-		this.extra3 = extra3;
-	}
-
-	/**
-	 * @return the extra4
-	 */
-	public String getExtra4() {
-		return extra4;
-	}
-
-	/**
-	 * @param extra4 the extra4 to set
-	 */
-	public void setExtra4(String extra4) {
-		this.extra4 = extra4;
-	}
-
-	/**
-	 * @return the extra5
-	 */
-	public String getExtra5() {
-		return extra5;
-	}
-
-	/**
-	 * @param extra5 the extra5 to set
-	 */
-	public void setExtra5(String extra5) {
-		this.extra5 = extra5;
-	}
-
-	/**
-	 * @return the registrationDate
-	 */
-	public Date getRegistrationDate() {
-		return registrationDate;
-	}
-
-	/**
-	 * @param registrationDate the registrationDate to set
-	 */
-	public void setRegistrationDate(Date registrationDate) {
-		this.registrationDate = registrationDate;
-	}
-
-	/**
 	 * @return the team
 	 */
 	public String getTeam() {
@@ -512,20 +320,6 @@ public class LabelRow {
 	 */
 	public void setTeam(String team) {
 		this.team = team;
-	}
-
-	/**
-	 * @return the procedence
-	 */
-	public String getProcedence() {
-		return procedence;
-	}
-
-	/**
-	 * @param procedence the procedence to set
-	 */
-	public void setProcedence(String procedence) {
-		this.procedence = procedence;
 	}
 
 	/**
@@ -598,45 +392,6 @@ public class LabelRow {
 		this.jobPosition = jobPosition;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("LabelRow [bib=");
-		builder.append(bib);
-		builder.append(", firstName=");
-		builder.append(firstName);
-		builder.append(", lastName=");
-		builder.append(lastName);
-		builder.append(", middleName=");
-		builder.append(middleName);
-		builder.append(", email=");
-		builder.append(email);
-		builder.append(", category=");
-		builder.append(category);
-		builder.append(", registrationConfirmation=");
-		builder.append(registrationConfirmation);
-		builder.append(", paymentConfirmation=");
-		builder.append(paymentConfirmation);
-		builder.append(", extra1=");
-		builder.append(extra1);
-		builder.append(", extra2=");
-		builder.append(extra2);
-		builder.append(", extra3=");
-		builder.append(extra3);
-		builder.append(", extra4=");
-		builder.append(extra4);
-		builder.append(", extra5=");
-		builder.append(extra5);
-		builder.append(", team=");
-		builder.append(team);
-		builder.append(", procedence=");
-		builder.append(procedence);
-		builder.append(", start time=");
-		builder.append(startTime);
-		builder.append("]");
-		return builder.toString();
-	}
-
 	public String getStartTime() {
 		return startTime;
 	}
@@ -651,6 +406,110 @@ public class LabelRow {
 
 	public void setLabelColor(String labelColor) {
 		this.labelColor = labelColor;
+	}
+
+	public Image getLogo() {
+		return logo;
+	}
+
+	public String getRegExtra1() {
+		return regExtra1;
+	}
+
+	public String getRegExtra2() {
+		return regExtra2;
+	}
+
+	public String getCatExtra2() {
+		return catExtra2;
+	}
+
+	public String getCatExtra3() {
+		return catExtra3;
+	}
+
+	public String getCatExtra4() {
+		return catExtra4;
+	}
+
+	public String getCatExtra5() {
+		return catExtra5;
+	}
+
+	public String getRegistrationDateTime() {
+		return registrationDateTime;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setLogo(Image logo) {
+		this.logo = logo;
+	}
+
+	public void setRegExtra1(String regExtra1) {
+		this.regExtra1 = regExtra1;
+	}
+
+	public void setRegExtra2(String regExtra2) {
+		this.regExtra2 = regExtra2;
+	}
+
+	public void setCatExtra2(String catExtra2) {
+		this.catExtra2 = catExtra2;
+	}
+
+	public void setCatExtra3(String catExtra3) {
+		this.catExtra3 = catExtra3;
+	}
+
+	public void setCatExtra4(String catExtra4) {
+		this.catExtra4 = catExtra4;
+	}
+
+	public void setCatExtra5(String catExtra5) {
+		this.catExtra5 = catExtra5;
+	}
+
+	public void setRegistrationDateTime(String registrationDateTime) {
+		this.registrationDateTime = registrationDateTime;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getDetailColumn1() {
+		return detailColumn1;
+	}
+
+	public String getDetailColumn2() {
+		return detailColumn2;
+	}
+
+	public void setDetailColumn1(String detailColumn1) {
+		this.detailColumn1 = detailColumn1;
+	}
+
+	public void setDetailColumn2(String detailColumn2) {
+		this.detailColumn2 = detailColumn2;
 	}
 
 }

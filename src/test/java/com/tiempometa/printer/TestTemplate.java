@@ -18,6 +18,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.tiempometa.printer.label.LabelReport;
 import com.tiempometa.printer.result.ResultReport;
 import com.tiempometa.printer.result.TeamResultReport;
 
@@ -36,6 +37,7 @@ public class TestTemplate {
 	private static final String SPLITS_TEMPLATE = "C:\\Users\\gtasi\\JaspersoftWorkspace\\MyReports\\results_listing_splits.jrxml";
 	private static final String SIMPLE_TEMPLATE = "C:\\Users\\gtasi\\JaspersoftWorkspace\\MyReports\\results_listing_simple.jrxml";
 	private static final String TEAMS_TEMPLATE = "C:\\Users\\gtasi\\JaspersoftWorkspace\\MyReports\\results_listing_teams.jrxml";
+	private static final String LABEL_TEMPLATE = "C:\\Users\\gtasi\\JaspersoftWorkspace\\MyReports\\label_3x1.jrxml";
 
 	/**
 	 * @throws java.lang.Exception
@@ -49,6 +51,35 @@ public class TestTemplate {
 	 */
 	@After
 	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testLabelTemplate() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test_print_labels.xml");
+		FileInputStream inputStream;
+		try {
+			File inputFile = new File(LABEL_TEMPLATE);
+			if (!inputFile.exists()) {
+				fail("Template file does not exist");
+			}
+			inputStream = new FileInputStream(inputFile);
+			LabelReport report = (LabelReport) ctx.getBean("label_report");
+			JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
+			JasperPrint print = JasperFillManager.fillReport(jasperReport, report.getParamMap(),
+					report.getDataSource());
+			JasperViewer.viewReport(print);
+			Thread.sleep(30000);
+			ctx.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JRException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test
@@ -91,6 +122,64 @@ public class TestTemplate {
 			}
 			inputStream = new FileInputStream(inputFile);
 			ResultReport report = (ResultReport) ctx.getBean("result_report");
+			JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
+			JasperPrint print = JasperFillManager.fillReport(jasperReport, report.getParamMap(),
+					report.getDataSource());
+			JasperViewer.viewReport(print);
+			Thread.sleep(30000);
+			ctx.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JRException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void testSimpleTemplateNoPace() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test_print_report.xml");
+		FileInputStream inputStream;
+		try {
+			File inputFile = new File(SIMPLE_TEMPLATE);
+			if (!inputFile.exists()) {
+				fail("Template file does not exist");
+			}
+			inputStream = new FileInputStream(inputFile);
+			ResultReport report = (ResultReport) ctx.getBean("result_report_no_pace");
+			JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
+			JasperPrint print = JasperFillManager.fillReport(jasperReport, report.getParamMap(),
+					report.getDataSource());
+			JasperViewer.viewReport(print);
+			Thread.sleep(30000);
+			ctx.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JRException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void testSimpleTemplateNoChipTime() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test_print_report.xml");
+		FileInputStream inputStream;
+		try {
+			File inputFile = new File(SIMPLE_TEMPLATE);
+			if (!inputFile.exists()) {
+				fail("Template file does not exist");
+			}
+			inputStream = new FileInputStream(inputFile);
+			ResultReport report = (ResultReport) ctx.getBean("result_report_no_chip_time");
 			JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
 			JasperPrint print = JasperFillManager.fillReport(jasperReport, report.getParamMap(),
 					report.getDataSource());
