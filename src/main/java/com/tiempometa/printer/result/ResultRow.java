@@ -35,6 +35,12 @@ public class ResultRow {
 	private Date finishDate;
 	private String detailColumn1;
 	private String detailColumn2;
+	private Double distance;
+	private String distanceValue;
+	private Byte distanceUnits;
+	private Integer lapCount;
+	private Integer calories;
+	private Integer steps;
 	private List<ResultSplit> splits = new ArrayList<ResultSplit>();
 	JRBeanCollectionDataSource splitsDataSource;
 
@@ -415,6 +421,54 @@ public class ResultRow {
 
 	public void setOfficialPace(String officialPace) {
 		this.officialPace = officialPace;
+	}
+
+	public Double getDistance() {
+		return distance;
+	}
+
+	public String getDistanceValue() {
+		return distanceValue;
+	}
+
+	public Byte getDistanceUnits() {
+		return distanceUnits;
+	}
+
+	public Integer getLapCount() {
+		return lapCount;
+	}
+
+	public Integer getCalories() {
+		return calories;
+	}
+
+	public Integer getSteps() {
+		return steps;
+	}
+
+	public void setDistance(Double distance) {
+		this.distance = distance;
+	}
+
+	public void setDistanceValue(String distanceValue) {
+		this.distanceValue = distanceValue;
+	}
+
+	public void setDistanceUnits(Byte distanceUnits) {
+		this.distanceUnits = distanceUnits;
+	}
+
+	public void setLapCount(Integer lapCount) {
+		this.lapCount = lapCount;
+	}
+
+	public void setCalories(Integer calories) {
+		this.calories = calories;
+	}
+
+	public void setSteps(Integer steps) {
+		this.steps = steps;
 	}
 
 }

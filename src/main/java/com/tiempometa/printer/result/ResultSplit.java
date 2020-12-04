@@ -28,6 +28,11 @@ public class ResultSplit {
 	private Integer chipGeneralPosition;
 	private Integer chipBranchPosition;
 	private Integer chipCategoryPosition;
+	private Double distance;
+	private String distanceValue;
+	private Byte distanceUnits;
+	private Integer calories;
+	private Integer steps;
 
 	public ResultSplit() {
 		super();
@@ -221,6 +226,46 @@ public class ResultSplit {
 
 	public void setLapTitle(String lapTitle) {
 		this.lapTitle = lapTitle;
+	}
+
+	public Double getDistance() {
+		return distance;
+	}
+
+	public String getDistanceValue() {
+		return distanceValue;
+	}
+
+	public Byte getDistanceUnits() {
+		return distanceUnits;
+	}
+
+	public Integer getCalories() {
+		return calories;
+	}
+
+	public Integer getSteps() {
+		return steps;
+	}
+
+	public void setDistance(Double distance) {
+		this.distance = distance;
+	}
+
+	public void setDistanceValue(String distanceValue) {
+		this.distanceValue = distanceValue;
+	}
+
+	public void setDistanceUnits(Byte distanceUnits) {
+		this.distanceUnits = distanceUnits;
+	}
+
+	public void setCalories(Integer calories) {
+		this.calories = calories;
+	}
+
+	public void setSteps(Integer steps) {
+		this.steps = steps;
 	}
 
 }

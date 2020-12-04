@@ -5,8 +5,9 @@
 
 	<groupId>com.tiempometa.printer</groupId>
 	<artifactId>jasperprint</artifactId>
-	<version>4.1</version>
+	<version>4.2</version>
 	<packaging>jar</packaging>
+	<description>Report row items with data fields for virtual races. Added distance and lap count fields.</description>
 
 	<properties>
 		<org.springframework.version>5.0.2.RELEASE</org.springframework.version>
