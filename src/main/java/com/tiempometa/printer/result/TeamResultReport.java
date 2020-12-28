@@ -3,6 +3,9 @@
  */
 package com.tiempometa.printer.result;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -41,12 +44,25 @@ public class TeamResultReport implements Report {
 	private String eventMessage;
 
 	private String reportTemplate;
+	private File reportTemplateFile;
 	private String reportTitle;
 	private String printDate;
 	private Integer printMode = PRINT_MODE_PRELIMINARY;
 	private Integer reportType = REPORT_TYPE_GUN;
 
 	private List<TeamResultRow> rows = new ArrayList<TeamResultRow>();
+
+	public TeamResultReport(String reportTemplate, List<TeamResultRow> rows) {
+		super();
+		this.reportTemplate = reportTemplate;
+		this.rows = rows;
+	}
+
+	public TeamResultReport(File reportTemplateFile, List<TeamResultRow> rows) {
+		super();
+		this.reportTemplateFile = reportTemplateFile;
+		this.rows = rows;
+	}
 
 	@Override
 	public String getTemplate() {
@@ -223,6 +239,20 @@ public class TeamResultReport implements Report {
 
 	public void setRows(List<TeamResultRow> rows) {
 		this.rows = rows;
+	}
+
+	@Override
+	public InputStream getReportInputStream() throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public File getReportTemplateFile() {
+		return reportTemplateFile;
+	}
+
+	public void setReportTemplateFile(File reportTemplateFile) {
+		this.reportTemplateFile = reportTemplateFile;
 	}
 
 }

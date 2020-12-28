@@ -11,6 +11,23 @@ import java.util.Date;
  * 
  */
 public class LabelRow {
+	public static final String DETAIL_COLUMN_CITY = "city";
+	public static final String DETAIL_COLUMN_STATE = "state";
+	public static final String DETAIL_COLUMN_TEAM = "team";
+	public static final String DETAIL_COLUMN_REG_EXTRA_1 = "regExtra1";
+	public static final String DETAIL_COLUMN_REG_EXTRA_2 = "regExtra2";
+	public static final String DETAIL_COLUMN_CAT_EXTRA_1 = "catExtra1";
+	public static final String DETAIL_COLUMN_CAT_EXTRA_2 = "catExtra2";
+	public static final String DETAIL_COLUMN_CAT_EXTRA_3 = "catExtra3";
+	public static final String DETAIL_COLUMN_CAT_EXTRA_4 = "catExtra4";
+	public static final String DETAIL_COLUMN_COLOR = "color";
+	public static final String DETAIL_COLUMN_START_TIME = "startTime";
+	public static final String DETAIL_COLUMN_START_DATE_TIME = "startDateTime";
+	public static final String DETAIL_COLUMN_BIB_UUID = "bibUuid";
+	public static final String DETAIL_COLUMN_PASS_CODE = "passCode";
+	public static final String DETAIL_COLUMN_CONFIRMATION_CODE = "confirmationCode";
+	public static final String DETAIL_COLUMN_CUSTOM_CODE = "customCode";
+
 	private Image barcode;
 	private Image qrCode;
 	private Image photo;

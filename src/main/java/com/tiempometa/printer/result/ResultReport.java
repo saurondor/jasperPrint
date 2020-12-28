@@ -3,6 +3,10 @@
  */
 package com.tiempometa.printer.result;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,6 +16,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 import com.tiempometa.printer.Report;
+import com.tiempometa.printer.label.LabelReport;
 
 /**
  * @author Gerardo Tasistro
@@ -64,6 +69,7 @@ public class ResultReport implements Report {
 	private String eventMessage;
 
 	private String reportTemplate;
+	private File reportTemplateFile;
 	private String reportTitle;
 	private String printDate;
 	private Integer printMode = PRINT_MODE_PRELIMINARY;
@@ -73,34 +79,39 @@ public class ResultReport implements Report {
 
 	private List<ResultRow> rows = new ArrayList<ResultRow>();
 
-	public ResultReport() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+//	public ResultReport() {
+//		super();
+//		// TODO Auto-generated constructor stub
+//	}
+//
+//	public ResultReport(String eventTitle, String eventSubtitle, String eventLocation, String eventDate,
+//			String imageTopLeft, String imageTopRight, String imageBottomLeft, String imageBottomRight,
+//			String detailColumn1Title, String detailColumn2Title, String eventWebPage, String eventMessage,
+//			String reportTemplate, String reportTitle, String printDate, Integer printMode, Integer reportType,
+//			List<ResultRow> rows) {
+//		super();
+//		this.eventTitle = eventTitle;
+//		this.eventSubtitle = eventSubtitle;
+//		this.eventLocation = eventLocation;
+//		this.eventDate = eventDate;
+//		this.imageTopLeft = imageTopLeft;
+//		this.imageTopRight = imageTopRight;
+//		this.imageBottomLeft = imageBottomLeft;
+//		this.imageBottomRight = imageBottomRight;
+//		this.detailColumn1Title = detailColumn1Title;
+//		this.detailColumn2Title = detailColumn2Title;
+//		this.eventWebPage = eventWebPage;
+//		this.eventMessage = eventMessage;
+//		this.reportTemplate = reportTemplate;
+//		this.reportTitle = reportTitle;
+//		this.printDate = printDate;
+//		this.printMode = printMode;
+//		this.reportType = reportType;
+//		this.rows = rows;
+//	}
 
-	public ResultReport(String eventTitle, String eventSubtitle, String eventLocation, String eventDate,
-			String imageTopLeft, String imageTopRight, String imageBottomLeft, String imageBottomRight,
-			String detailColumn1Title, String detailColumn2Title, String eventWebPage, String eventMessage,
-			String reportTemplate, String reportTitle, String printDate, Integer printMode, Integer reportType,
-			List<ResultRow> rows) {
-		super();
-		this.eventTitle = eventTitle;
-		this.eventSubtitle = eventSubtitle;
-		this.eventLocation = eventLocation;
-		this.eventDate = eventDate;
-		this.imageTopLeft = imageTopLeft;
-		this.imageTopRight = imageTopRight;
-		this.imageBottomLeft = imageBottomLeft;
-		this.imageBottomRight = imageBottomRight;
-		this.detailColumn1Title = detailColumn1Title;
-		this.detailColumn2Title = detailColumn2Title;
-		this.eventWebPage = eventWebPage;
-		this.eventMessage = eventMessage;
-		this.reportTemplate = reportTemplate;
-		this.reportTitle = reportTitle;
-		this.printDate = printDate;
-		this.printMode = printMode;
-		this.reportType = reportType;
+	public ResultReport(File reportTemplateFile, List<ResultRow> rows) {
+		this.reportTemplateFile = reportTemplateFile;
 		this.rows = rows;
 	}
 
@@ -396,6 +407,25 @@ public class ResultReport implements Report {
 
 	public void setDetailColumn2Column(String detailColumn2Column) {
 		this.detailColumn2Column = detailColumn2Column;
+	}
+
+	@Override
+	public InputStream getReportInputStream() throws FileNotFoundException {
+		InputStream stream = null;
+		if (reportTemplateFile == null) {
+			stream = LabelReport.class.getResourceAsStream(reportTemplate);
+		} else {
+			stream = new FileInputStream(reportTemplateFile);
+		}
+		return stream;
+	}
+
+	public File getReportTemplateFile() {
+		return reportTemplateFile;
+	}
+
+	public void setReportTemplateFile(File reportTemplateFile) {
+		this.reportTemplateFile = reportTemplateFile;
 	}
 
 }

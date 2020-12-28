@@ -3,6 +3,10 @@
  */
 package com.tiempometa.printer.label;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,6 +36,7 @@ public class LabelReport implements Report {
 	public static final String TEMPLATE_MODE_3_BY_2 = "3by2Template";
 	public static final String TEMPLATE_MODE_CUSTOM = "customTemplate";
 	private String template;
+	private File templateFile;
 	private String detailColumn1Title;
 	private String detailColumn2Title;
 	private String detailColumn1Column;
@@ -39,6 +44,22 @@ public class LabelReport implements Report {
 	private String eventMessage;
 
 	private List<LabelRow> rows = new ArrayList<LabelRow>();
+
+	@Override
+	public InputStream getReportInputStream() throws FileNotFoundException {
+		InputStream stream = null;
+		if (templateFile == null) {
+			stream = LabelReport.class.getResourceAsStream(template);
+		} else {
+			stream = new FileInputStream(templateFile);
+		}
+		return stream;
+	}
+
+	public LabelReport(File templateFile, List<LabelRow> rows) {
+		this.rows = rows;
+		this.templateFile = templateFile;
+	}
 
 	public LabelReport(String template, List<LabelRow> rows) {
 		this.rows = rows;
@@ -130,6 +151,14 @@ public class LabelReport implements Report {
 
 	public void setEventMessage(String eventMessage) {
 		this.eventMessage = eventMessage;
+	}
+
+	public File getTemplateFile() {
+		return templateFile;
+	}
+
+	public void setTemplateFile(File templateFile) {
+		this.templateFile = templateFile;
 	}
 
 }
