@@ -27,11 +27,20 @@ public class LabelReport implements Report {
 	public static final String DETAIL_COLUMN_TEAM = "team";
 	public static final String DETAIL_COLUMN_REG_EXTRA_1 = "regExtra1";
 	public static final String DETAIL_COLUMN_REG_EXTRA_2 = "regExtra2";
+	public static final String DETAIL_COLUMN_CAT_EXTRA_1 = "catExtra1";
+	public static final String DETAIL_COLUMN_CAT_EXTRA_2 = "catExtra2";
+	public static final String DETAIL_COLUMN_CAT_EXTRA_3 = "catExtra3";
+	public static final String DETAIL_COLUMN_CAT_EXTRA_4 = "catExtra4";
 	public static final String DETAIL_COLUMN_COLOR = "color";
 	public static final String DETAIL_COLUMN_START_TIME = "startTime";
+	public static final String DETAIL_COLUMN_START_DATE_TIME = "startDateTime";
+	public static final String DETAIL_COLUMN_BIB_UUID = "bibUuid";
 	public static final String DETAIL_COLUMN_PASS_CODE = "passCode";
 	public static final String DETAIL_COLUMN_CONFIRMATION_CODE = "confirmationCode";
 	public static final String DETAIL_COLUMN_CUSTOM_CODE = "customCode";
+	public static final int PRINT_DISTANCE_TITLE_NONE = 0;
+	public static final int PRINT_DISTANCE_TITLE_POST = 1;
+	public static final int PRINT_DISTANCE_TITLE_PRE = 2;
 	public static final String TEMPLATE_MODE_3_BY_1 = "3by1Template";
 	public static final String TEMPLATE_MODE_3_BY_2 = "3by2Template";
 	public static final String TEMPLATE_MODE_CUSTOM = "customTemplate";
@@ -41,6 +50,7 @@ public class LabelReport implements Report {
 	private String detailColumn2Title;
 	private String detailColumn1Column;
 	private String detailColumn2Column;
+	private int labelDistancePrint;
 	private String eventMessage;
 
 	private List<LabelRow> rows = new ArrayList<LabelRow>();
@@ -159,6 +169,14 @@ public class LabelReport implements Report {
 
 	public void setTemplateFile(File templateFile) {
 		this.templateFile = templateFile;
+	}
+
+	public int getLabelDistancePrint() {
+		return labelDistancePrint;
+	}
+
+	public void setLabelDistancePrint(int labelDistancePrint) {
+		this.labelDistancePrint = labelDistancePrint;
 	}
 
 }
