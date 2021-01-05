@@ -26,6 +26,8 @@ public class ResultReport implements Report {
 
 	public static final int REPORT_TYPE_GUN = 0;
 	public static final int REPORT_TYPE_CHIP = 1;
+	public static final int REPORT_TYPE_GUN_SPLITS = 2;
+	public static final int REPORT_TYPE_CHIP_SPLITS = 3;
 	public static final int HIDE_COLUMN = 0;
 	public static final int SHOW_COLUMN = 1;
 	public static final int PRINT_MODE_OFFICIAL = 0;
