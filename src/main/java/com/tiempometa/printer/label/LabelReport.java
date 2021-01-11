@@ -35,6 +35,7 @@ public class LabelReport implements Report {
 	public static final String DETAIL_COLUMN_START_TIME = "startTime";
 	public static final String DETAIL_COLUMN_START_DATE_TIME = "startDateTime";
 	public static final String DETAIL_COLUMN_BIB_UUID = "bibUuid";
+	public static final String DETAIL_COLUMN_BIB = "bib";
 	public static final String DETAIL_COLUMN_PASS_CODE = "passCode";
 	public static final String DETAIL_COLUMN_CONFIRMATION_CODE = "confirmationCode";
 	public static final String DETAIL_COLUMN_CUSTOM_CODE = "customCode";
@@ -42,7 +43,9 @@ public class LabelReport implements Report {
 	public static final int PRINT_DISTANCE_TITLE_POST = 1;
 	public static final int PRINT_DISTANCE_TITLE_PRE = 2;
 	public static final String TEMPLATE_MODE_3_BY_1 = "3by1Template";
+	public static final String TEMPLATE_MODE_3_BY_1_BARCODE = "3by1BarcodeTemplate";
 	public static final String TEMPLATE_MODE_3_BY_2 = "3by2Template";
+	public static final String TEMPLATE_MODE_3_BY_2_BARCODE = "3by2BarcodeTemplate";
 	public static final String TEMPLATE_MODE_CUSTOM = "customTemplate";
 	private String template;
 	private File templateFile;
@@ -50,6 +53,7 @@ public class LabelReport implements Report {
 	private String detailColumn2Title;
 	private String detailColumn1Column;
 	private String detailColumn2Column;
+	private String eventLogo;
 	private int labelDistancePrint;
 	private String eventMessage;
 
@@ -177,6 +181,14 @@ public class LabelReport implements Report {
 
 	public void setLabelDistancePrint(int labelDistancePrint) {
 		this.labelDistancePrint = labelDistancePrint;
+	}
+
+	public String getEventLogo() {
+		return eventLogo;
+	}
+
+	public void setEventLogo(String eventLogo) {
+		this.eventLogo = eventLogo;
 	}
 
 }
