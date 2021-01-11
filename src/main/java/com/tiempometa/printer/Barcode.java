@@ -26,6 +26,9 @@ import com.lowagie.text.pdf.Barcode128;
 public class Barcode {
 
 	public static BufferedImage generateQrCode(String data) throws WriterException {
+		if (data == null) {
+			return null;
+		}
 		Map<EncodeHintType, Object> hintMap = new EnumMap<EncodeHintType, Object>(EncodeHintType.class);
 		hintMap.put(EncodeHintType.CHARACTER_SET, "UTF-8");
 		BufferedImage qrCode = null;
@@ -53,6 +56,9 @@ public class Barcode {
 	}
 
 	public static Image generateBarcode(String data) {
+		if (data == null) {
+			return null;
+		}
 		Barcode128 barCode = new Barcode128();
 		barCode.setCodeType(Barcode128.CODE128);
 		barCode.setCode(data);
@@ -62,6 +68,9 @@ public class Barcode {
 	}
 
 	public static BufferedImage generateBarcodeCode(String data) throws WriterException {
+		if (data == null) {
+			return null;
+		}
 		Map<EncodeHintType, Object> hintMap = new EnumMap<EncodeHintType, Object>(EncodeHintType.class);
 		hintMap.put(EncodeHintType.CHARACTER_SET, "UTF-8");
 		BufferedImage qrCode = null;
