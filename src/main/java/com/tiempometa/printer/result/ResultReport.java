@@ -28,6 +28,11 @@ public class ResultReport implements Report {
 	public static final int REPORT_TYPE_CHIP = 1;
 	public static final int REPORT_TYPE_GUN_SPLITS = 2;
 	public static final int REPORT_TYPE_CHIP_SPLITS = 3;
+
+	public static final int RESULT_POSITION_TYPE_CATEGORY = 1;
+	public static final int RESULT_POSITION_TYPE_GENERAL = 2;
+	public static final int RESULT_POSITION_TYPE_GENDER = 3;
+
 	public static final int HIDE_COLUMN = 0;
 	public static final int SHOW_COLUMN = 1;
 	public static final int PRINT_MODE_OFFICIAL = 0;
@@ -78,6 +83,7 @@ public class ResultReport implements Report {
 	private Integer reportType = REPORT_TYPE_GUN;
 	private Integer showChipTime = SHOW_COLUMN;
 	private Integer showPace = SHOW_COLUMN;
+	private Integer positionType = RESULT_POSITION_TYPE_CATEGORY;
 
 	private List<ResultRow> rows = new ArrayList<ResultRow>();
 
@@ -306,6 +312,7 @@ public class ResultReport implements Report {
 		paramMap.put("REPORT_PRINT_TIME", this.getPrintDate());
 		paramMap.put("RESULT_REPORT_PRINT_MODE", this.getPrintMode());
 		paramMap.put("RESULT_REPORT_TYPE", this.getReportType());
+		paramMap.put("RESULT_POSITION_TYPE", this.getPositionType());
 		paramMap.put("EVENT_TITLE", this.getEventTitle());
 		paramMap.put("DETAIL_COLUMN_1_TITLE", this.getDetailColumn1Title());
 		paramMap.put("DETAIL_COLUMN_2_TITLE", this.getDetailColumn2Title());
@@ -428,6 +435,14 @@ public class ResultReport implements Report {
 
 	public void setReportTemplateFile(File reportTemplateFile) {
 		this.reportTemplateFile = reportTemplateFile;
+	}
+
+	public Integer getPositionType() {
+		return positionType;
+	}
+
+	public void setPositionType(Integer positionType) {
+		this.positionType = positionType;
 	}
 
 }
