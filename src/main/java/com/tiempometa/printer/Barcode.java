@@ -1,4 +1,24 @@
-/**
+/*
+ * Copyright (c) 2019 TiempoMeta
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  */
 package com.tiempometa.printer;
@@ -20,11 +40,20 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.lowagie.text.pdf.Barcode128;
 
 /**
- * @author gtasi
- *
+ * A set of utilities to generate Barcodes and QR Codes
+ * 
+ * @author Gerardo Tasistro
+ * 
  */
 public class Barcode {
 
+	/**
+	 * Generates a QR Code with the provided data value.
+	 * 
+	 * @param data Info to encode in QR Code
+	 * @return
+	 * @throws WriterException
+	 */
 	public static BufferedImage generateQrCode(String data) throws WriterException {
 		if (data == null) {
 			return null;
@@ -55,6 +84,12 @@ public class Barcode {
 		return qrCode;
 	}
 
+	/**
+	 * Generates a Barcode128 formatted barcode with the provided data.
+	 * 
+	 * @param data Info to encode in barcode
+	 * @return
+	 */
 	public static Image generateBarcode(String data) {
 		if (data == null) {
 			return null;
@@ -67,6 +102,13 @@ public class Barcode {
 		return barCode.createAwtImage(Color.BLACK, Color.WHITE);
 	}
 
+	/**
+	 * Generates a Barcode128 formatted barcode with the provided data.
+	 * 
+	 * @param data Info to encode in barcode
+	 * @return
+	 * @throws WriterException
+	 */
 	public static BufferedImage generateBarcodeCode(String data) throws WriterException {
 		if (data == null) {
 			return null;
