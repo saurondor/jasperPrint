@@ -445,4 +445,9 @@ public class ResultReport implements Report {
 		this.positionType = positionType;
 	}
 
+	public boolean useChipTime() {
+		return getReportType().equals(ResultReport.REPORT_TYPE_CHIP)
+				|| getReportType().equals(ResultReport.REPORT_TYPE_CHIP_SPLITS);
+	}
+
 }
