@@ -44,7 +44,7 @@ import net.sf.jasperreports.view.JasperViewer;
 /**
  * Handles printing of a {@link Report} and provides helper methods.
  * 
- * @author Gerardo Tasistro
+ * @author Gerardo Esteban Tasistro Giubetic
  * 
  */
 public class Printer {

@@ -33,7 +33,7 @@ import net.sf.jasperreports.engine.JRDataSource;
  * Interface for a report that provides access to data source and report
  * parameters.
  * 
- * @author Gerardo Tasistro
+ * @author Gerardo Esteban Tasistro Giubetic
  *
  */
 public interface Report {

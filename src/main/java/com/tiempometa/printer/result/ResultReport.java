@@ -38,11 +38,10 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import com.tiempometa.printer.Report;
 import com.tiempometa.printer.label.LabelReport;
 
-
 /**
  * Implementation of {@link Report} to handling printing of results.
  * 
- * @author Gerardo Tasistro
+ * @author Gerardo Esteban Tasistro Giubetic
  *
  */
 public class ResultReport implements Report {

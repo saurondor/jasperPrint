@@ -51,7 +51,7 @@ import net.sf.jasperreports.view.JasperViewer;
  * them prior to printing. Allows more editing flexibility as JRXML are compiled
  * on the fly.
  * 
- * @author Gerardo Tasistro
+ * @author Gerardo Esteban Tasistro Giubetic
  * 
  */
 public class JrxmlPrinter {

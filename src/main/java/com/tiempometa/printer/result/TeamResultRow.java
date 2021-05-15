@@ -33,7 +33,7 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 /**
  * Row bean for JRDataSource in {@link TeamResultReport}
  * 
- * @author Gerardo Tasistro
+ * @author Gerardo Esteban Tasistro Giubetic
  *
  */
 public class TeamResultRow {

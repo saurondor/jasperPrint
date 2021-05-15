@@ -27,7 +27,7 @@ package com.tiempometa.printer.result;
  * Row bean for JRDataSource embedded in {@link ResultRow} to render splits
  * subreport.
  * 
- * @author Gerardo Tasistro
+ * @author Gerardo Esteban Tasistro Giubetic
  *
  */
 public class ResultSplit {

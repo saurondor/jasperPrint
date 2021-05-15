@@ -41,7 +41,7 @@ import com.tiempometa.printer.Report;
  * Implementation of {@link Report} to handling printing of labels on a thermal
  * transfer printer.
  * 
- * @author Gerardo Tasistro
+ * @author Gerardo Esteban Tasistro Giubetic
  *
  */
 public class LabelReport implements Report {

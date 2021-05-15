@@ -29,7 +29,7 @@ import java.util.Date;
 /**
  * Row bean for JRDataSource in {@link LabelReport}
  * 
- * @author Gerardo Tasistro
+ * @author Gerardo Esteban Tasistro Giubetic
  *
  */
 public class LabelRow {

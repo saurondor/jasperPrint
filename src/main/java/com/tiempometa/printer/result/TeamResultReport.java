@@ -39,7 +39,7 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 /**
  * Implementation of {@link Report} to handling printing of team results.
  * 
- * @author Gerardo Tasistro
+ * @author Gerardo Esteban Tasistro Giubetic
  *
  */
 public class TeamResultReport implements Report {

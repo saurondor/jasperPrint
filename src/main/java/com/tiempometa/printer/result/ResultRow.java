@@ -32,7 +32,7 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 /**
  * Row bean for JRDataSource in {@link ResultReport}
  * 
- * @author Gerardo Tasistro
+ * @author Gerardo Esteban Tasistro Giubetic
  *
  */
 public class ResultRow {

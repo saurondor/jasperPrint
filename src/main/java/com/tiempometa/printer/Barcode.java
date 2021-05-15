@@ -42,7 +42,7 @@ import com.lowagie.text.pdf.Barcode128;
 /**
  * A set of utilities to generate Barcodes and QR Codes
  * 
- * @author Gerardo Tasistro
+ * @author Gerardo Esteban Tasistro Giubetic
  * 
  */
 public class Barcode {
