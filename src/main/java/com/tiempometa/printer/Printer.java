@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 TiempoMeta
+ * Copyright (c) 2019 Gerardo Esteban Tasistro Giubetic
  * 
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
