@@ -353,7 +353,6 @@ public class ResultRow {
 	 */
 	public void setSplits(List<ResultSplit> splits) {
 		this.splits = splits;
-		this.splitsDataSource = new JRBeanCollectionDataSource(this.splits, false);
 	}
 
 	public synchronized JRBeanCollectionDataSource getSplitsDataSource() {
@@ -491,6 +490,10 @@ public class ResultRow {
 
 	public void setSteps(Integer steps) {
 		this.steps = steps;
+	}
+
+	public void initSplitsDataSource() {
+		this.splitsDataSource = new JRBeanCollectionDataSource(this.splits, false);
 	}
 
 }
