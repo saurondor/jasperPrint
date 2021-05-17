@@ -45,30 +45,109 @@ import com.tiempometa.printer.Report;
  *
  */
 public class LabelReport implements Report {
+	/**
+	 * Indicates participant city field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_CITY = "city";
+	/**
+	 * Indicates participant state field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_STATE = "state";
+	/**
+	 * Indicates participant team field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_TEAM = "team";
+	/**
+	 * Indicates registration extra1 field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_REG_EXTRA_1 = "regExtra1";
+	/**
+	 * Indicates registration extra2 field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_REG_EXTRA_2 = "regExtra2";
+	/**
+	 * Indicates category extra1 field for us as detail column value. (Usually Color
+	 * code label set on bib)
+	 */
 	public static final String DETAIL_COLUMN_CAT_EXTRA_1 = "catExtra1";
+	/**
+	 * Indicates category extra2 field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_CAT_EXTRA_2 = "catExtra2";
+	/**
+	 * Indicates category extra3 field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_CAT_EXTRA_3 = "catExtra3";
+	/**
+	 * Indicates category extra4 field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_CAT_EXTRA_4 = "catExtra4";
+	/**
+	 * Indicates category color code field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_COLOR = "color";
+	/**
+	 * Indicates participant start time field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_START_TIME = "startTime";
+	/**
+	 * Indicates participant start time field (in datetime format) for us as detail
+	 * column value.
+	 */
 	public static final String DETAIL_COLUMN_START_DATE_TIME = "startDateTime";
+	/**
+	 * Indicates bib UUID field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_BIB_UUID = "bibUuid";
+	/**
+	 * Indicates bib number field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_BIB = "bib";
+	/**
+	 * Indicates registration pass code field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_PASS_CODE = "passCode";
+	/**
+	 * Indicates registration confirmation code field for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_CONFIRMATION_CODE = "confirmationCode";
+	/**
+	 * Indicates a custom code to parse for us as detail column value.
+	 */
 	public static final String DETAIL_COLUMN_CUSTOM_CODE = "customCode";
+	/**
+	 * Indicates the distance title should not be concatenated to the category
+	 * title.
+	 */
 	public static final int PRINT_DISTANCE_TITLE_NONE = 0;
+	/**
+	 * Indicates the distance title should be concatenated after the category title.
+	 */
 	public static final int PRINT_DISTANCE_TITLE_POST = 1;
+	/**
+	 * Indicates the distance title should be concatenated prior to the category
+	 * title.
+	 */
 	public static final int PRINT_DISTANCE_TITLE_PRE = 2;
+	/**
+	 * Indicates the 3x1 inch default template should be used
+	 */
 	public static final String TEMPLATE_MODE_3_BY_1 = "3by1Template";
+	/**
+	 * Indicates the 3x1 inch with barcode default template should be used
+	 */
 	public static final String TEMPLATE_MODE_3_BY_1_BARCODE = "3by1BarcodeTemplate";
+	/**
+	 * Indicates the 3x2 inch default template should be used
+	 */
 	public static final String TEMPLATE_MODE_3_BY_2 = "3by2Template";
+	/**
+	 * Indicates the 3x2 inch with barcode default template should be used
+	 */
 	public static final String TEMPLATE_MODE_3_BY_2_BARCODE = "3by2BarcodeTemplate";
+	/**
+	 * Indicates a custom template should be used
+	 */
 	public static final String TEMPLATE_MODE_CUSTOM = "customTemplate";
 	private String template;
 	private File templateFile;
@@ -206,10 +285,20 @@ public class LabelReport implements Report {
 		this.labelDistancePrint = labelDistancePrint;
 	}
 
+	/**
+	 * Returns the filename to the event logo image.
+	 * 
+	 * @return
+	 */
 	public String getEventLogo() {
 		return eventLogo;
 	}
 
+	/**
+	 * Sets the filename for the event logo image.
+	 * 
+	 * @param eventLogo
+	 */
 	public void setEventLogo(String eventLogo) {
 		this.eventLogo = eventLogo;
 	}

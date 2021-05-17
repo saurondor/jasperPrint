@@ -38,12 +38,33 @@ import net.sf.jasperreports.engine.JRDataSource;
  */
 public interface Report {
 
+	/**
+	 * Returns a string to a file o resource holding the Jasper file.
+	 * 
+	 * @return
+	 */
 	String getTemplate();
 
+	/**
+	 * Returns a datasource to the array of beans to fill the report.
+	 * 
+	 * @return
+	 */
 	JRDataSource getDataSource();
 
+	/**
+	 * Returns a map to the parameters that will be passed to the report.
+	 * 
+	 * @return
+	 */
 	Map<String, Object> getParamMap();
 
+	/**
+	 * Gets an input stream to the file or resource indicated as template
+	 * ({@link #getTemplate()}).
+	 * 
+	 * @return
+	 */
 	InputStream getReportInputStream() throws FileNotFoundException;
 
 }
