@@ -8,8 +8,6 @@ import static org.junit.Assert.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.print.PrintService;
 

@@ -24,7 +24,6 @@
 package com.tiempometa.printer.result;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import net.sf.jasperreports.engine.JRDataSource;

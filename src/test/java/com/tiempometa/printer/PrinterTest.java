@@ -5,24 +5,12 @@ package com.tiempometa.printer;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import javax.print.PrintService;
-
-import net.sf.jasperreports.engine.JRException;
 
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.tiempometa.printer.label.LabelReport;
-import com.tiempometa.printer.label.LabelRow;
-import com.tiempometa.printer.result.ResultReport;
-import com.tiempometa.printer.result.ResultRow;
-import com.tiempometa.printer.result.ResultSplit;
 
 /**
  * @author Gerardo Tasistro
