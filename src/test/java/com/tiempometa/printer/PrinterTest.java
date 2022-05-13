@@ -7,7 +7,8 @@ import static org.junit.Assert.*;
 
 import javax.print.PrintService;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +19,7 @@ import org.junit.Test;
  */
 public class PrinterTest {
 
-	private static final Logger logger = Logger.getLogger(PrinterTest.class);
+	private static final Logger logger = LogManager.getLogger(PrinterTest.class);
 
 	private String reportTemplate = "C:\\Users\\Gerardo Tasistro\\Documents\\tiempometa\\development\\general.jasper";
 	private String labelTemplate = "C:\\Users\\Gerardo Tasistro\\Documents\\tiempometa\\development\\etiqueta3x1.jasper";
