@@ -24,7 +24,11 @@
 package com.tiempometa.printer;
 
 import java.awt.Image;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import javax.print.PrintService;
 import javax.print.PrintServiceLookup;
@@ -182,6 +186,39 @@ public class Printer {
 	 *                     prior to printing
 	 * @throws JRException
 	 */
+	/**
+	 * Renders all pages of a report to a list of images.
+	 * Returns an empty list if the report has no data.
+	 *
+	 * @param report the report to render
+	 * @param zoom   scale factor (1.0 = native page size)
+	 */
+	public static List<Image> renderAllPages(Report report, float zoom) throws JRException {
+		try {
+			InputStream is = report.getReportInputStream();
+			return renderAllPages(report, zoom, is);
+		} catch (FileNotFoundException e) {
+			throw new JRException("Report template not found: " + e.getMessage(), e);
+		}
+	}
+
+	/**
+	 * Renders all pages of a report to a list of images using a provided stream.
+	 */
+	public static List<Image> renderAllPages(Report report, float zoom, InputStream inputStream)
+			throws JRException {
+		JasperPrint print = JasperFillManager.fillReport(
+				inputStream, report.getParamMap(), report.getDataSource());
+		if (print.getPages() == null || print.getPages().isEmpty()) {
+			return Collections.emptyList();
+		}
+		List<Image> pages = new ArrayList<>(print.getPages().size());
+		for (int i = 0; i < print.getPages().size(); i++) {
+			pages.add(JasperPrintManager.printPageToImage(print, i, zoom));
+		}
+		return pages;
+	}
+
 	public static void printToPrinter(Report report, PrintService printService, boolean withDialogue)
 			throws JRException {
 		JasperPrint print = JasperFillManager.fillReport(report.getTemplate(), report.getParamMap(),
