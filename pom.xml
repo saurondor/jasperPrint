@@ -3,7 +3,7 @@
 
 	<groupId>com.tiempometa.printer</groupId>
 	<artifactId>jasperprint</artifactId>
-	<version>4.3</version>
+	<version>5.0.0</version>
 	<packaging>jar</packaging>
 	<description>Report row items with data fields for virtual races. Added distance and lap count fields.</description>
 
